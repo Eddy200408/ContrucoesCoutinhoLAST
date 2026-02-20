@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construções Coutinho</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image" href="./icon/logoWhite.png">
+    <script src="https://kit.fontawesome.com/15e164fb66.js" crossorigin="anonymous"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+<body>
+
+    <!-- LOADER: Ícone de construção martelando -->
+    <div id="loader-overlay" class="loader-overlay">
+        <div class="loader-container">
+           
+                <!-- Picareta com animação de martelada -->
+               <img src="icon/picareta.png" class="loader-icon" width="80" height="80" alt="Picareta">
+              
+          
+            <p class="loader-text">Loading</p>
+        </div>
+    </div>
+
+    <!--INICIO DE NAVBAR-->
+
+    <div class="topnav">
+        <nav>
+            <img alt="icon" src="icon/logoWhiteCopia.png">
+            <div class="navbar-brand">
+                <span>Construções <span style="color: #fe9445;">Coutinho</span></span>
+            </div>
+            <span class="menu-icon" id="menu-icon">&#9776;</span>
+            <ul id="nav-list">
+                <li><a href="#" style="color: #fe9445;"> Inicio</a></li>
+                <li><a href="services.html"> Serviços</a></li>
+                <li><a href="about.html"> Sobre Nós</a></li>
+
+                <li type="button"><a href="contact.html" 
+                  style="
+                  text-decoration: none;
+                  color: white;
+                  background-color: #fe9445;
+                  padding: 2vh;
+                  border-radius: 30px;
+                  ">  Fale Conosco</a></li>
+        
+            </ul>
+           
+        </nav>
+    </div>
+
+    <!--FIM DE NAVBAR-->
+    
+    <!--INICIO DE CARROSSEL-->
+    <!--INICIO DE CARROSSEL-->
+    <section class="container">
+      <div class="slider-weapper">
+        <div class="slider">
+          <div class="slide" style="background-image: url('img/São Vicente.jpg')">
+            <div class="overlay">
+              <small style="color: #fe9445;">BELEZA &amp; RADIANCE</small>
+              <h1>Construções <span class="span">Coutinho</span></h1>
+              <p>Projetos e execução com compromisso, qualidade e segurança para transformar o seu espaço.</p>
+              <div class="cta">
+                <a class="btn btn-primary" href="contact.html">Fale Conosco</a>
+                <a class="btn btn-outline" href="services.html">Explorar Serviços</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide" style="background-image: url('img/s0.png')">
+            <div class="overlay">
+              <small style="color: #fe9445;">NOSSOS SERVIÇOS</small>
+              <h1 >Execução &amp;<span class="span"> Projetos</span></h1>
+              <p>Oferecemos elaboração de projetos, execução de obras e fornecimento de materiais.</p>
+              <div class="cta">
+                <a class="btn btn-primary" href="services.html">Ver Serviços</a>
+                <a class="btn btn-outline" href="contact.html">Solicitar Orçamento</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide" style="background-image: url('img/s1(2).png')">
+            <div class="overlay">
+              <small style="color: #fe9445;">PROJETOS</small>
+              <h1>Portfólio de <span class="span">Obras</span></h1>
+              <p>Conheça os nossos projectos recentes e veja como podemos ajudar no seu próximo projecto.</p>
+              <div class="cta">
+                <a class="btn btn-primary" href="index.html#galleryContainer">Ver Projetos</a>
+                <a class="btn btn-outline" href="contact.html">Agendar Visita</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide" style="background-image: url('img/s2.png')">
+            <div class="overlay">
+              <small style="color: #fe9445;">CONTACTO</small>
+              <h1>Pronto para <span class="span">Começar?</span></h1>
+              <p>Entre em contacto connosco e transforme as suas ideias em realidade.</p>
+              <div class="cta">
+                <a class="btn btn-primary" href="contact.html">Contactar Agora</a>
+                <a class="btn btn-outline" href="about.html">Sobre Nós</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="slider-arrow prev" aria-label="Anterior">&#10094;</button>
+        <button class="slider-arrow next" aria-label="Próximo">&#10095;</button>
+
+        <div class="slider-dots" aria-hidden="false"></div>
+      </div>
+    </section>
+    <!--FIM DE CARROSSEL-->
+    <!-- INÍCIO: Container de estatísticas abaixo do carrossel -->
+    <section class="stats">
+      <div class="stats-container">
+        <div class="stat">
+          <div class="stat-icon"><img src="icon/Projetos.png" alt="icon" style="filter: brightness(0) invert(1);"></div>
+          <div class="stat-number">15+</div>
+          <div class="stat-title">Anos de Excelência</div>
+          <div class="stat-sub">Referência em beleza premium</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-icon"><img src="icon/CC.png" alt="icon" style="filter: brightness(0) invert(1);"></div>
+          <div class="stat-number">5000+</div>
+          <div class="stat-title">Clientes Satisfeitos</div>
+          <div class="stat-sub">Histórias de transformação</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-icon"><img src="icon/Blocos.png" alt="icon" style="filter: brightness(0) invert(1);"></div>
+          <div class="stat-number">50+</div>
+          <div class="stat-title">Procedimentos</div>
+          <div class="stat-sub">Serviços especializados</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-icon"><img src="icon/tranporte.png" alt="icon" style="filter: brightness(0) invert(1);"></div>
+          <div class="stat-number">98%</div>
+          <div class="stat-title">Taxa de Satisfação</div>
+          <div class="stat-sub">Recomendação entre clientes</div>
+        </div>
+      </div>
+    </section>
+    <!-- FIM: Container de estatísticas -->
+    
+<div class="conteudo">
+
+  <!--    <div class="Slogan" data-aos="fade-up" data-aos-duration="1200">
+        <h1>Construções <span class="span">Coutinho</span></h1>
+        <h2>Construindo sonhos, Transformando Espaços</h2>
+    </div>
+    -->
+
+
+    
+    <h1 class="Title-services" >
+    <span style="color: #333333;">Construções</span> Coutinho</h1>
+
+
+    <!--INICIO DE CONTAINER ABOUT
+    
+    <div class="containerAbout">
+        <article class="card1" data-aos="flip-left" data-aos-duration="1000">
+            <img alt="icon" src="icon/logoWhiteCopia.png">
+        </article>
+        <article class="card2" data-aos="flip-left" data-aos-duration="1000">
+            <p>
+              A Construções Coutinho é uma empresa especializada no setor da construção civil,
+              atuando na elaboração de projetos de Arquitetura, Engenharias e aréas afins.<br>
+              Como construtora tem como objetivo<a href="about.html" style="color: #fe9445; text-decoration: none;">Leia mais...</a></p>
+        </article>
+    </div>-->
+    <!--FIM DE CONTAINER ABOUT-->
+
+    <!-- INÍCIO: Seção Portfólio abaixo do about (projetos/obras) -->
+    <section class="portfolio-section" data-aos="fade-up" data-aos-duration="900">
+      <div class="portfolio-inner">
+        <div class="portfolio-text">
+          <small>NOSSA HISTÓRIA</small>
+          <h2>Um Sonho que se Tornou Realidade</h2>
+          <p>A Construções Coutinho nasceu de uma visão clara: construir com qualidade, segurança e atenção aos detalhes. Trabalhamos com projetos residenciais e comerciais, oferecendo acompanhamento técnico e execução completa — do projeto à entrega.</p>
+          <p>Com décadas de experiência e inúmeras obras entregues, buscamos integrar estética, durabilidade e eficiência em cada trabalho.</p>
+        </div>
+
+        <div class="portfolio-media">
+          <div class="portfolio-thumb">
+            <img id="portfolio-thumb" src="img/Elaboracao de Projetos/1.jpg" alt="Projeto concluído">
+            <div class="portfolio-badge">
+              <div class="badge-number">15+</div>
+              <div class="badge-sub">ANOS DE EXPERIÊNCIA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="Title-services" data-aos="fade-right" data-aos-duration="1000"><span style="color: #333333;">Nossos</span> Serviços</h1>
+
+    <!-- INÍCIO: Nossos Serviços (após ABOUT) -->
+    <section class="our-services">
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-image"><img src="img/Elaboracao de Projetos/1.jpg" alt="Facial Premium"></div>
+          <div class="service-icon"><img src="icon/Projetos.png" alt="icon" style="filter: brightness(0) invert(1);"></div>
+          <h3>Facial Premium</h3>
+          <p class="service-desc">Tratamentos faciais avançados com produtos de última geração</p>
+          <a class="service-link" href="services.html">Saber Mais →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image"><img src="img/Elaboracao de Projetos/2.jpg" alt="Corpo & Spa"></div>
+          <div class="service-icon"><img src="icon/Blocos.png" alt="icon" style="filter: brightness(0) invert(1);"></div>
+          <h3>Corpo &amp; Spa</h3>
+          <p class="service-desc">Experiências sensacionais de renovação corporal e bem-estar</p>
+          <a class="service-link" href="services.html">Saber Mais →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image"><img src="img/Elaboracao de Projetos/3.jpg" alt="Estética Avançada"></div>
+          <div class="service-icon"><img src="icon/CC.png" alt="icon" style="filter: brightness(0) invert(1);"></div>
+          <h3>Estética Avançada</h3>
+          <p class="service-desc">Procedimentos inovadores para resultado excepcional</p>
+          <a class="service-link" href="services.html">Saber Mais →</a>
+        </article>
+      </div>
+
+      <div class="services-cta">
+        <a href="services.html" class="btn-ghost">Ver Todos os Serviços</a>
+      </div>
+    </section>
+    <!-- FIM: Nossos Serviços -->
+
+      
+
+    <!--INICIO DE CARD OBRAS-->
+   
+    <h1 class="Title-services" data-aos="fade-up" data-aos-duration="1000"><span style="color: #333333;">Nossos</span> Projetos</h1>
+ 
+    <!--FIM DE CARDS OBRA-->  
+
+    <div class="gallery-wrap">
+      <img src="img/Galeria/back.png" id="backBtn">
+ 
+  <div class="gallery" id="galleryContainer">
+      <!-- Cada DIV é um “slide” -->
+      <div><img src="img/Galeria/1.jpg" alt="Imagem 1"></div>
+      <div><img src="img/Galeria/2.jpg" alt="Imagem 2"></div>
+      <div><img src="img/Galeria/3.jpg" alt="Imagem 3"></div>
+      <div><img src="img/Galeria/4.jpg" alt="Imagem 4"></div>
+      <div><img src="img/Galeria/5.jpg" alt="Imagem 5"></div>
+      <div><img src="img/Galeria/6.jpg" alt="Imagem 6"></div>
+      <div><img src="img/Galeria/7.jpg" alt="Imagem 7"></div>
+      <div><img src="img/Galeria/8.jpg" alt="Imagem 8"></div>
+      <div><img src="img/Galeria/9.jpg" alt="Imagem 9"></div>
+      <div><img src="img/Galeria/10.jpg" alt="Imagem 10"></div>
+      <div><img src="img/Galeria/12.jpg" alt="Imagem 11"></div>
+      <div><img src="img/Galeria/12(1).png" alt="Imagem 12"></div>
+      <div><img src="img/Galeria/13.png" alt="Imagem 13"></div>
+      <div><img src="img/Galeria/14.png" alt="Imagem 14"></div>
+      <div><img src="img/Galeria/15.png" alt="Imagem 15"></div>
+      <div><img src="img/Galeria/16.png" alt="Imagem 16"></div>
+      <div><img src="img/Galeria/17.png" alt="Imagem 17"></div>
+      <div><img src="img/Galeria/18.png" alt="Imagem 13"></div>
+    </div>
+
+      <img src="img/Galeria/next.png" id="nextBtn">      
+   </div>  
+
+    <!-- Modal para ver a imagem ampliada -->
+    <div class="modal" id="modal">
+        <!-- Ícone de fechar -->
+        <span class="close" id="closeModal">&times;</span>
+        <!-- Imagem ampliada -->
+        <img class="modal-content" id="modalImg">
+        <!-- Ícones de navegação dentro da modal -->
+        <div class="modal-nav">
+        <span id="modalPrev">&#10094;</span>
+        <span id="modalNext">&#10095;</span>
+        </div>
+    </div>
+
+    <div class="slider-indicators" id="sliderIndicators">
+        <!-- Os dots serão gerados dinamicamente -->
+    </div>
+
+    <!--INICIO DE CONTAINER OUR SERVICES
+    
+
+    <h1 class="Title-services" data-aos="fade-right" data-aos-duration="1000"><span style="color: #333333;">Nossos</span> Serviços</h1>
+
+
+    <div class="containerCards">
+
+        <article class="card-1" data-aos="flip-left" data-aos-duration="1000" onclick="window.location.href='services.html'" style="cursor: pointer;">
+            <img alt="icon" src="icon/Projetos.png" style="filter: invert(58%) sepia(91%) saturate(651%) hue-rotate(-8deg) brightness(102%) contrast(99%);">
+            <div class="card-box">
+                <h2>Elaboração de Projetos</h2>
+            </div>
+        </article>
+
+        <article class="card-2" data-aos="flip-left" data-aos-duration="1000" onclick="window.location.href='services.html'" style="cursor: pointer;">
+            <img alt="icon" src="icon/CC.png" style="filter: invert(58%) sepia(91%) saturate(651%) hue-rotate(-8deg) brightness(102%) contrast(99%);">
+            <div class="card-box">
+                <h2>Execução de Obras de Construção Civil</h2>
+            </div>
+        </article>
+
+        <article class="card-3" data-aos="flip-left" data-aos-duration="1000" onclick="window.location.href='services.html'" style="cursor: pointer;">
+            <img alt="icon" src="icon/Blocos.png" style="filter: invert(58%) sepia(91%) saturate(651%) hue-rotate(-8deg) brightness(102%) contrast(99%);">
+            <div class="card-box">
+                <h2>Produção e Vendas de Blocos</h2>
+            </div>
+        </article>
+
+        <article class="card-3" data-aos="flip-left" data-aos-duration="1000" onclick="window.location.href='services.html'" style="cursor: pointer;">
+            <img alt="icon" src="icon/tranporte.png" style="filter: invert(58%) sepia(91%) saturate(651%) hue-rotate(-8deg) brightness(102%) contrast(99%);">
+            <div class="card-box">
+                <h2>Serviço de Tranporte de materias</h2>
+            </div>
+        </article>
+
+    </div>
+    -->
+
+    <!--FIM DE CONTAINER OUR SERVICES-->
+    
+
+  </div>
+    <!--INICIO DE FOOTER-->
+
+    <!-- INÍCIO: CTA de conversão antes do footer -->
+    <section class="cta-hero">
+      <div class="cta-hero-inner">
+        <h2>Pronto para sua Transformação?</h2>
+        <p>Entre em contato conosco hoje e comece sua jornada para a melhor versão do seu projeto.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="cta-btn primary">Agendar Agora →</a>
+          <a href="contact.html" class="cta-btn outline">Fale Conosco</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container-footer">
+          
+          <div class="text-footer" data-aos="fade-up" data-aos-duration="800">
+            <img src="icon/logoWhite.png" alt="logo" data-aos="fade-up" data-aos-duration="800">
+              
+            <p style="font-style: italic; font-family: cursive;">Construindo sonhos, Transformando Espaços</p>
+
+             
+              
+          </div>
+
+          <div class="text2-footer" data-aos="fade-up" data-aos-duration="800">
+              <h5>Contatos</h5>
+              <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>  Mindelo, São Vicente, Cabo Verde</a></br>
+
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5"/>
+                </svg>  +238 9944212</a></br>
+              <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                  <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                </svg>  construcoescoutinho01@gmail.com</a>
+
+                <h5>Follow Us</h5>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16" style="margin-right: 0.5vh;">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                </svg></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16" style="margin-right: 0.5vh;">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+              </svg></a>
+              <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                </svg></a>
+              
+          </div>
+
+          <div class="text3-footer" data-aos="fade-up" data-aos-duration="800">
+            <h5>Estamos aqui</h5>
+            <div style="width: 100%; height: 250px;">
+              <iframe 
+              width="100%" 
+              height="100%" 
+              style="
+              border: 0;
+              border-radius:5px;" 
+              loading="lazy" 
+              allowfullscreen 
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3436.562696528632!2d-24.9773892!3d16.8843699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUzJzAzLjciTiAyNMKwNTgnMzguNiJX!5e0!3m2!1sen!2sus!4v1707660000000">
+          </iframe>
+          </div>
+      
+          </div>  
+      </div>
+      <p class="copy">&copy; 2025 Coutss Soft Solution. Todos os direitos reservados. Powered by Eddy Coutinho  <a href="https://www.instagram.com/eddycoutinhosantos/" style="text-decoration: none; color: white;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+        </svg></a></p>
+  </footer>
+
+  <div id="scroll-down">
+    <!-- Exemplo com SVG de seta para baixo -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+      <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+    </svg>
+  </div>
+
+  <div id="scrollToTopBtn" title="Voltar ao topo" ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708z"/>
+    <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+  </svg></div>
+
+
+    
+    
+</body>
+
+<script>
+window.addEventListener("scroll", function () {
+    const nav = document.getElementById("nav");
+
+    if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
+</script>
+
+
+
+<script>
+
+  //CONFIGURACAO DO CARROSEL
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.querySelector(".slider");
+        let index = 0;
+    
+        function nextSlide() {
+            index++;
+            if (index >= slider.children.length) {
+                index = 0;
+            }
+            slider.scrollTo({
+                left: slider.clientWidth * index,
+                behavior: "smooth"
+            });
+        }
+    
+        setInterval(nextSlide, 3000); // Troca de imagem a cada 3 segundos
+    });
+    </script>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<!--INICIO CONFIGURACAO DO ICON MENU-->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const menuIcon = document.getElementById("menu-icon");
+  const navList = document.getElementById("nav-list");
+  const contactButton = document.querySelector("nav > button");
+
+  menuIcon.addEventListener("click", function(e) {
+      // Alterna a exibição do menu e do botão
+      navList.classList.toggle("active");
+      contactButton.classList.toggle("active");
+  });
+
+  // Opcional: fecha o menu ao clicar fora
+  document.addEventListener("click", function(e) {
+      if (!menuIcon.contains(e.target) && 
+          !navList.contains(e.target) && 
+          !contactButton.contains(e.target)) {
+          navList.classList.remove("active");
+          contactButton.classList.remove("active");
+      }
+  });
+});
+
+
+  </script>
+
+   <!--CONFIGURACAO DO ICON DE ITERACAO-->
+
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let idleTimer;
+      const idleTime = 3000; // Tempo de inatividade: 3 segundos
+      const scrollDownIcon = document.getElementById("scroll-down");
+    
+      // Função auxiliar que verifica se a página está no final (tolerância de 5px)
+      function isAtBottom() {
+        return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5;
+      }
+    
+      // Função que exibe o ícone somente se NÃO estiver no final da página
+      function showIcon() {
+        if (!isAtBottom()) {
+          scrollDownIcon.classList.add("show");
+        } else {
+          scrollDownIcon.classList.remove("show");
+        }
+      }
+    
+      // Função para reiniciar o timer de inatividade e ocultar o ícone imediatamente
+      function resetIdleTimer() {
+        clearTimeout(idleTimer);
+        scrollDownIcon.classList.remove("show");
+        idleTimer = setTimeout(showIcon, idleTime);
+      }
+    
+      // Eventos de interação do usuário
+      ["scroll", "mousemove", "keydown"].forEach(evt => {
+        document.addEventListener(evt, function() {
+          resetIdleTimer();
+          // Se o evento for scroll e estivermos no final, garante que o ícone fique oculto
+          if (evt === "scroll" && isAtBottom()) {
+            scrollDownIcon.classList.remove("show");
+          }
+        }, false);
+      });
+    
+      // Ao clicar no ícone, a página rola uma viewport inteira para baixo e reinicia o timer
+      scrollDownIcon.addEventListener("click", function() {
+        window.scrollBy({
+          top: window.innerHeight,
+          behavior: "smooth"
+        });
+        scrollDownIcon.classList.remove("show");
+        resetIdleTimer();
+      });
+    
+      // Inicia o timer de inatividade ao carregar a página
+      idleTimer = setTimeout(showIcon, idleTime);
+    });
+    </script>
+
+<!--CONFIGURACAO DO ICON PARA VOLTAR AO TOPO-->
+<script>
+  // Seleciona o botão
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const inactivityDelay = 2000; // 3 segundos
+let inactivityTimer;
+
+// Função que exibe o botão, mas somente se o usuário não estiver no topo da página
+function showButton() {
+  if (window.scrollY > 0) {
+    scrollToTopBtn.classList.add("show");
+  }
+}
+
+// Função que oculta o botão
+function hideButton() {
+  scrollToTopBtn.classList.remove("show");
+}
+
+// Reinicia o timer de inatividade e esconde o botão imediatamente ao detectar interação
+function resetInactivityTimer() {
+  hideButton();
+  clearTimeout(inactivityTimer);
+  inactivityTimer = setTimeout(() => {
+    // Ao final dos 3 segundos, se o usuário não estiver no topo, o botão é exibido
+    if (window.scrollY > 0) {
+      showButton();
+    }
+  }, inactivityDelay);
+}
+
+// Lista de eventos que consideramos como interação do usuário
+const userEvents = [ "scroll", "keydown"];
+userEvents.forEach(event => {
+  window.addEventListener(event, resetInactivityTimer, false);
+});
+
+// Inicializa o timer de inatividade
+resetInactivityTimer();
+
+// Ao clicar no botão, a página rola suavemente até o topo
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+
+
+
+<!--CONFIGURACAO DA GALERIA DE FOTOS-->
+
+
+<script>
+  // ---------- Scroll horizontal na galeria ----------
+const galleryContainer = document.getElementById('galleryContainer');
+const backBtn = document.getElementById('backBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+backBtn.addEventListener('click', () => {
+ galleryContainer.scrollLeft -= galleryContainer.clientWidth;
+});
+
+nextBtn.addEventListener('click', () => {
+ galleryContainer.scrollLeft += galleryContainer.clientWidth;
+});
+
+ // ---------- Auto-slide a cada 3 segundos ----------
+ setInterval(() => {
+ // Se estivermos próximos do fim, volta para o início
+ const slideWidth = getSlideWidth();
+ let index = Math.round(galleryContainer.scrollLeft / slideWidth);
+ if (index >= slides.length - 1) {
+   galleryContainer.scrollLeft = 0;
+ } else {
+   if (window.innerWidth > 750) {
+     // MODO PC (> 750px): avança 1 imagem
+     // cada imagem tem largura (80vw / 3), então:
+     galleryContainer.scrollLeft += (galleryContainer.clientWidth / 3);
+   } else {
+     // MODO MOBILE (<= 750px): avança 1 imagem (tela inteira)
+     galleryContainer.scrollLeft += galleryContainer.clientWidth;
+   }
+ }
+ updateSliderDots();
+}, 3000); // 3 segundos
+
+// Atualiza os dots quando há rolagem manual
+galleryContainer.addEventListener('scroll', () => {
+ updateSliderDots();
+});
+
+// Retorna a largura de um slide dependendo do dispositivo
+function getSlideWidth() {
+ return window.innerWidth > 750 ? galleryContainer.clientWidth / 3 : galleryContainer.clientWidth;
+}
+
+// Gera os indicadores de acordo com o número de slides
+const sliderIndicators = document.getElementById('sliderIndicators');
+const slides = document.querySelectorAll('.gallery > div');
+slides.forEach((slide, index) => {
+ const dot = document.createElement('div');
+ dot.classList.add('dot');
+ dot.addEventListener('click', () => {
+   galleryContainer.scrollLeft = index * getSlideWidth();
+   updateSliderDots();
+ });
+ sliderIndicators.appendChild(dot);
+});
+
+// Atualiza o indicador ativo conforme o slide atual
+function updateSliderDots() {
+ const slideWidth = getSlideWidth();
+ let index = Math.round(galleryContainer.scrollLeft / slideWidth);
+ if (index >= slides.length) index = slides.length - 1;
+ document.querySelectorAll('.slider-indicators .dot').forEach((dot, idx) => {
+   dot.classList.toggle('active', idx === index);
+ });
+}
+// Inicializa os indicadores
+updateSliderDots();
+
+// ---------- Modal (imagem ampliada) ----------
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+const closeModal = document.getElementById('closeModal');
+const modalPrev = document.getElementById('modalPrev');
+const modalNext = document.getElementById('modalNext');
+
+// Seleciona todas as imagens da galeria
+const allImages = document.querySelectorAll('.gallery img');
+
+// Índice da imagem atualmente exibida na modal
+let currentIndex = 0;
+
+// Ao clicar em qualquer imagem, abre a modal
+allImages.forEach((img, index) => {
+ img.addEventListener('click', () => {
+   currentIndex = index;
+   openModal(currentIndex);
+ });
+});
+
+// Função para abrir a modal com a imagem no índice 'i'
+function openModal(i) {
+ modal.style.display = 'flex';       // mostra a modal
+ modalImg.src = allImages[i].src;    // define o src da imagem ampliada
+}
+
+// Fechar a modal ao clicar no (X)
+closeModal.addEventListener('click', () => {
+ modal.style.display = 'none';
+});
+
+// Botão "Próxima" dentro da modal
+modalNext.addEventListener('click', () => {
+ currentIndex++;
+ if (currentIndex >= allImages.length) {
+   currentIndex = 0; // volta para a primeira, se quiser looping
+ }
+ modalImg.src = allImages[currentIndex].src;
+});
+
+// Botão "Anterior" dentro da modal
+modalPrev.addEventListener('click', () => {
+ currentIndex--;
+ if (currentIndex < 0) {
+   currentIndex = allImages.length - 1; // vai para a última, se quiser looping
+ }
+ modalImg.src = allImages[currentIndex].src;
+});
+
+// Fecha a modal se o usuário clicar fora da imagem
+window.addEventListener('click', (e) => {
+ if (e.target === modal) {
+   modal.style.display = 'none';
+ }
+});
+</script>
+
+<!-- Script para esconder loader quando página estiver totalmente carregada -->
+<script>
+  window.addEventListener('load', function(){
+    const loaderOverlay = document.getElementById('loader-overlay');
+    if(loaderOverlay){
+      loaderOverlay.classList.add('hidden');
+      // Remove do DOM após a transição
+      setTimeout(() => {
+        loaderOverlay.style.display = 'none';
+      }, 500);
+    }
+  });
+</script>
+
+<!-- Script para navbar fixo com scroll dinâmico -->
+<script>
+  window.addEventListener('scroll', function(){
+    const navbar = document.querySelector('nav');
+    if(window.scrollY > 100){
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+    
+</html>

@@ -1,0 +1,881 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #333333;
+    line-height: 1.8;
+    
+   
+}
+/* LOADER - Ícone de construção martelando */
+.loader-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.loader-overlay.hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader-icon{
+    animation: martelar 0.8s ease-in-out infinite;
+    width: 80px;
+    height: 80px;
+    filter: invert(47%) sepia(93%) saturate(1360%) hue-rotate(-15deg) brightness(101%) contrast(101%);
+
+}
+
+@keyframes martelar{
+    0%{
+        transform: rotate(-15deg);
+    }
+    50%{
+        transform: rotate(15deg);
+    }
+    100%{
+        transform: rotate(-15deg);
+    }
+}
+
+.spinner-circle{
+    animation: spin 2s linear infinite;
+    transform-origin: 50px 50px;
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.loader-text{
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+.topnav{
+
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+nav{
+    top: 0;
+    left: 0;
+    right: 0;                /* garante largura exata */
+                /* mantém responsivo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
+    position: fixed;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    z-index: 1000;
+    background-color: transparent;
+}
+/* Quando a página é rolada, o navbar recebe a classe "scrolled" */
+nav.scrolled {
+    background-color: white;
+    padding: 15px 10%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Links quando o navbar estiver branco */
+nav.scrolled a {
+    color: #333;
+}
+/* Logo text que aparece ao rolar - posicionado de forma absoluta para não empurrar elementos */
+.navbar-brand {
+    position: absolute;
+    left:25%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+nav.scrolled .navbar-brand {
+    opacity: 1;
+}
+.navbar-brand span {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+nav.scrolled .navbar-brand span {
+    color: #333333;
+}
+nav.scrolled img {
+    width: 8%;
+    height: 8%;
+}
+.logo{
+    font-size: 28px;
+    color: #fff;
+
+}
+.span{
+    color: #fe9445;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover{
+    color: #fe9445;
+    transition: .3s;
+}
+button{
+    border: none;
+    background: #fe9445;
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: .4s;
+}
+button:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+nav img{
+    width: 15%;
+    height: 15%;
+
+}
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 10%;
+}
+
+.container {
+    padding: 0;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    position: relative; /* Necessário para posicionar elementos filhos absolutos */
+}
+
+/* Adiciona uma sobreposição de degradê branco */
+.container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48%;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0%) 0%, rgb(255 255 255 / 76%) 60%, rgba(255, 255, 255, 1) 100%);
+    z-index: 0;
+}
+
+.container h1 {
+    position: absolute;
+    top: 34%;
+    left: 0%;
+    transform: translateX(-50%);
+    
+    color: #fe9445;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+/* ======= Seção Portfólio (layout igual à imagem enviada) ======= */
+.portfolio-section{
+  max-width: 1200px;
+  margin: 4.5rem auto;
+  padding: 0 6%;
+}
+.portfolio-inner{
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 40px;
+  align-items: center;
+}
+.portfolio-text small{ color: #e6b23a; font-weight:700; letter-spacing:1px; }
+.portfolio-text h2{ font-size: 44px; margin: 10px 0 18px; color: #222; line-height:1.05; }
+.portfolio-text p{ color: #6f6f6f; font-size: 16px; margin-bottom: 12px; }
+
+.portfolio-media{ display:flex; justify-content:flex-end; }
+.portfolio-thumb{ position: relative; width: 100%; max-width: 520px; border-radius: 18px;  box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+.portfolio-thumb img{ display:block; width:100%; height:420px; object-fit:cover; transition: opacity .5s ease; border-radius: 18px; }
+
+.portfolio-badge{ position: absolute;  bottom: -18px; background: linear-gradient(180deg,#e6b23a,#fe9445); color: #fff; padding: 22px 26px; border-radius: 12px; box-shadow: 0 14px 30px rgba(0,0,0,0.15); transform: translateY(0); }
+.portfolio-badge .badge-number{ font-size: 36px; font-weight:700; line-height:1; }
+.portfolio-badge .badge-sub{ font-size:12px; font-weight:800; letter-spacing:1px; margin-top:6px; }
+
+/* Responsivo: empilha colunas em telas pequenas */
+@media screen and (max-width: 900px){
+  .portfolio-inner{ grid-template-columns: 1fr; }
+  .portfolio-media{ order: -1; display:flex; justify-content:center; }
+  .portfolio-thumb img{ height:320px; }
+  .portfolio-badge{ left: 50%; transform: translate(-50%,0); bottom: -18px; }
+}
+
+/* ====== FEATURE / Conteudo (Missão, Visão, Compromisso) ====== */
+.feature-inner{
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 3.5rem auto;
+    padding: 0 6%;
+}
+.feature-inner.reverse{ grid-template-columns: 1fr 520px; }
+.feature-media img{
+    display:block;
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+.feature-content{ text-align:left; }
+.feature-sub{ color:#e6b23a; font-weight:700; letter-spacing:1px; font-size:13px; }
+.feature-title{ font-size:40px; margin:10px 0 14px; color:#111; line-height:1.02; }
+.feature-desc{ color:#6f6f6f; margin-bottom:18px; font-size:16px; }
+.feature-list{ display:flex; flex-direction:column; gap:14px; }
+.feature{ display:flex; gap:16px; align-items:flex-start; }
+.feature-icon{ width:48px; height:48px; min-width:48px; border-radius:50%; background: linear-gradient(180deg,#fff6eb,#fff); border:1px solid rgba(254,148,69,0.12); display:flex; align-items:center; justify-content:center; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+.feature-icon img{ display:block; width:22px; height:22px; object-fit:contain; filter: drop-shadow(0 2px 0 rgba(0,0,0,0.02)); }
+.feature-text h4{ margin:0; font-size:16px; color:#222; font-weight:700; }
+.feature-text p{ margin:6px 0 0; color:#777; font-size:14px; }
+
+@media screen and (max-width: 900px){
+    .feature-inner{ grid-template-columns: 1fr; gap: 20px; padding: 0 4%; }
+    .feature-media img{ height:320px; }
+    .feature-title{ font-size:32px; }
+}
+
+
+/* ====== STATS (bloco abaixo do carrossel) ====== */
+.stats{
+    background: transparent;
+    padding: 60px 10%;
+}
+.stats-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.stat{
+    text-align: center;
+    flex: 1 1 0;
+    background: #fbf6f1; /* fundo claro bege */
+    border: 1px solid rgba(254,148,69,0.12);
+    border-radius: 18px;
+    padding: 34px 22px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    min-height: 130px;
+}
+.stat-icon{ display: none; }
+.stat-number{
+    color: #fe9445;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+.stat-title{
+    font-weight: 700;
+    color: #7a7a7a;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+.stat-sub{
+    color: #a6a6a6;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 1000px){
+    .stats-container{ gap: 1rem; }
+    .stat-number{ font-size: 42px; }
+}
+
+@media screen and (max-width: 700px){
+    .stats-container{
+        flex-direction: column;
+        gap: 1.6rem;
+        padding: 0 4%;
+    }
+    .stats{ padding: 36px 0; }
+    .stat{ padding: 22px; min-height: auto; }
+    .stat-number{ font-size: 40px; }
+}
+
+
+.conteudo{
+
+    place-items: center;
+    padding-left: 12%;
+    max-width: 100%;
+    padding-right: 12%;
+    text-align: center;
+    align-items: center;
+}
+.container1{
+    padding: 50px; 
+    /* width: 67%; */
+    height: 50%;
+    /* background-color: #ecebeb; */
+    margin-top: 5%;
+    /* margin-left: 15%; */
+    border-radius: 10px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
+    /* position: absolute; */
+    top: 20%;
+   
+}
+.title{
+    text-align: center;
+    align-items: center;
+    font-size: 35px;
+}
+
+.containerAbout{
+    padding-right: 22%;
+    display: grid;
+    grid-gap: 10%;
+    grid-template-areas: "card1 card2";
+    grid-template-columns: 50% 70%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.card1 img{
+    width: 100%;
+    height: 80%;
+}
+.card2{
+    margin-top: 3%;
+}
+.card2 p{
+    font-size: 25px;
+    text-align: justify;
+    line-height: 1.5;
+}
+.conteudoM{
+    /*margin-top: 55vh;*/
+}
+.containerMissao{
+        
+    padding-right: 20%;
+    display: grid;
+    grid-gap: 10%;
+    grid-template-areas: "card1 card2";
+    grid-template-columns: 80% 50%;
+       
+}
+.title2{
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 30px;
+}
+
+.iconM{
+    grid-area: card2;
+    width: 100%;
+}
+.iconM img{
+    width: 40%;
+    height: 65%;
+    margin-top: 5%;
+}
+.pMissao{
+    grid-area: card1;
+    width: 100%;
+}
+.pMissao p{
+    width: 105%;
+    margin-top: 5vh;
+    line-height: 1.8;
+    text-align: left;
+    font-size: 25px;
+
+}
+.conteudoV{
+    margin-top: 10vh;
+}
+.containerVisao{
+      /* padding-left: 10%; */
+      padding-right: 25%;
+      display: grid
+  ;
+      grid-gap: 10%;
+      grid-template-areas: "card1 card2";
+      grid-template-columns: 50% 73%;
+      margin-top: 4vh;
+      margin-bottom: 5%;
+}
+.title3{
+    text-align: right;
+    margin-bottom: 0;
+    font-size: 30px;
+}
+
+.iconV{
+    grid-area: card1;
+    width: 100%;
+}
+.iconV img{
+    width: 40%;
+    height: 75%;
+    margin-top: 5%;
+}
+.pVisao{
+    grid-area: card2;
+    width: 100%;
+}
+.pVisao p{
+    width: 100%;
+    line-height: 1.8;
+    text-align: right;
+    font-size: 25px;
+
+}
+
+.containerContact button{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.329);
+}
+/* INICIO DE CSS FOOTER*/
+
+footer{
+    margin-top: 5%;
+    background-color: #232323;
+    height: auto;
+    color: #bbbbbb;
+    padding: 5% 8%;
+    padding-bottom: 1vh;
+}
+
+.container-footer{
+    display: grid;
+    grid-template-areas: " text1 text2 button";
+    grid-template-columns: 30% 28% 34%;
+    grid-gap: 4%;
+}
+.container-footer h5{
+    color: white;
+    margin-bottom: 7%;
+    font-size: 15px;
+    margin-top: 7%;
+}
+.container-footer p{
+    margin-bottom: 7%;
+}
+
+.container-footer a{
+    margin-bottom: 15px;
+    color: #bbbbbb;
+    text-decoration: none;
+}
+.container-footer img{
+    grid-area: Fimg;
+    width: 100%;
+}
+.text-footer{
+    grid-area: text1;
+}
+.text2-footer{
+    grid-area: text2;
+}
+.copy{
+    text-align: center;
+}
+/* Estilo para o ícone de scroll */
+#scroll-down {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Oculto por padrão */
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  
+    color: gray;
+   
+   
+  }
+  
+  /* Se desejar um efeito de fade quando o ícone aparece */
+  #scroll-down.show {
+    display: block;
+    opacity: 1;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+ 
+  @keyframes pulse {
+    0% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.2);
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+  #back-to-top button{
+    
+  }
+  #back-to-top {
+    position: absolute;
+    bottom: 0;
+    right: 20px; /* Mantém o botão no canto inferior direito */
+    width: 50px;
+    height: 50px;
+    background: #fe9445;
+    color: white;
+    border: none;
+    
+    font-size: 24px;
+    display: none; /* Oculto por padrão */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+  }
+  
+  #back-to-top:hover {
+    background: #e68332;
+  }
+  
+  #back-to-top.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  #back-to-top.hide {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  
+  #scrollToTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: #fe9445;
+    color: #fff;
+    border: none;
+    border-radius: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+  }
+  /* Classe que torna o botão visível */
+  #scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  #scrollToTopBtn svg{
+    color: #fff;
+  }
+
+/*RESPONSIVA*/
+@media screen and (max-width: 750px){
+
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+        
+
+    }
+    
+    html, body {
+        width: 100vw;
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+      nav {
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+    }
+    nav img{
+        width: 12vh;
+        height: 8vh;
+        position: absolute;
+        left: 4vh;
+        top: 2vh;
+        z-index: 1000;
+    }
+    nav.scrolled{
+        padding: 15px;
+        height: 10%;
+    }
+        nav.scrolled a {
+    color: #fff;
+}
+    nav.scrolled img {
+        width: 10vh;
+        height: 7vh;
+        top: 1vh;
+}
+nav.scrolled .menu-icon {
+        display: block;
+        font-size: 35px;
+        cursor: pointer;
+        color: #333;
+        position: absolute;
+        top: 20px;
+        right: 10%;
+        z-index: 100;
+    }
+    
+    /* Navbar brand responsivo */
+    .navbar-brand {
+        display: flex;
+        opacity: 0;
+    }
+    
+    nav.scrolled .navbar-brand {
+        display: flex; 
+        opacity: 1;
+        /* width: 0px; */
+        margin-top: 5%;
+        margin-left: 29%;
+    }
+
+
+    /* Oculta a lista e o botão por padrão */
+    #nav-list,
+    nav > button {
+        display: none;
+    }
+
+    /* Exibe o ícone do menu */
+    .menu-icon {
+        display: block;
+        font-size: 35px;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        top: 20px;
+        right: 10%;
+        z-index: 100;
+    }
+
+    /* Estiliza a lista do menu para aparecer como um dropdown */
+    #nav-list {
+        line-height: 2;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        /* right: 10%; */
+        background: rgb(0 0 0 / 90%);
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+        padding: 37vh 10px;
+        height: 100vh;
+        font-size: 18px;
+    }
+
+    #nav-list.active {
+        display: flex;
+        z-index: 10;
+    }
+
+    #nav-list li {
+        padding: 10px;
+    }
+
+    nav > button {
+        position: absolute;
+        top: 25vh;
+        right: 15%;
+        width: 271px;
+        text-align: center;
+        background: #fe9445;
+        border-radius: 23px;
+        padding: 10px 0;
+        z-index: 15;
+    }
+
+    nav > button.active {
+        display: block;
+    }
+
+    .container{
+        box-shadow: none;
+        height: 30vh;
+    }
+    .slider{
+        box-shadow: none;
+    }
+    .conteudo{
+        max-width: 100%;
+        font-size: 18px;
+        padding: 5vh;
+    }
+   
+
+    .container1{
+       
+        margin: 0;
+        padding: 0; 
+        right: 10%;
+
+    }
+    .title{
+        font-size: 25px;
+    }
+
+    .containerAbout{
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+    .card2 p{
+        font-size: 16px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .conteudoM{
+        margin-top: 5vh;
+    }
+    .title2{
+        font-size: 25px;
+    }
+
+    .containerMissao{
+        display: block;
+        padding: 0;
+    }
+    .pMissao p{
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .conteudoV{
+        margin-top: 5vh;
+    }
+    .title3{
+        font-size: 25px;
+    }
+    .containerVisao{
+        display: block;
+        padding: 0;
+    }
+    .pVisao p{
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .containerContact{
+        line-height: 1.5;
+    }
+    .containerContact button{
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.329);
+        margin-top: 3vh;
+    }
+   
+    footer{
+        width: 100%;
+        height: auto;
+        margin-top: 20%;
+       
+    }
+    .container-footer{
+        display: block;
+        text-align: center;
+    }
+    .text-footer{
+        display: block;
+    }
+    .text2-footer{
+        display: block;
+    }
+    .text2-footer a{
+        margin-top: 2vh;
+    }
+    .text3-footer{
+        display: block;
+    }
+    .text3-footer button{
+        margin: 2vh;
+        border-radius: 12px;
+    }
+    .container-footer img{
+        width: 50%;
+        margin-top: 15%;
+    }
+    .container-footer h5{
+        font-size: 23px;
+    }
+    .container-footer p{
+        font-size: 19px;
+    }
+    .copy{
+        text-align: center;
+        margin-top: 10px;
+    }
+}

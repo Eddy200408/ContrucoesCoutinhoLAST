@@ -1,0 +1,1176 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #333333;
+    line-height: 1.5;
+    background-color: #f6f5f5;
+}
+
+/* LOADER - Ícone de construção martelando */
+.loader-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.loader-overlay.hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader-icon{
+    animation: martelar 0.8s ease-in-out infinite;
+    width: 80px;
+    height: 80px;
+    filter: invert(47%) sepia(93%) saturate(1360%) hue-rotate(-15deg) brightness(101%) contrast(101%);
+
+}
+
+@keyframes martelar{
+    0%{
+        transform: rotate(-15deg);
+    }
+    50%{
+        transform: rotate(15deg);
+    }
+    100%{
+        transform: rotate(-15deg);
+    }
+}
+
+.spinner-circle{
+    animation: spin 2s linear infinite;
+    transform-origin: 50px 50px;
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.loader-text{
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+
+.topnav{
+
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+nav{
+    top: 0;
+    left: 0;
+    right: 0;                /* garante largura exata */
+                /* mantém responsivo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
+    position: fixed;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    z-index: 1000;
+    background-color: transparent;
+}
+/* Quando a página é rolada, o navbar recebe a classe "scrolled" */
+nav.scrolled {
+    background-color: white;
+    padding: 15px 10%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Links quando o navbar estiver branco */
+nav.scrolled a {
+    color: #333;
+}
+/* Logo text que aparece ao rolar - posicionado de forma absoluta para não empurrar elementos */
+.navbar-brand {
+    position: absolute;
+    left:25%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+nav.scrolled .navbar-brand {
+    opacity: 1;
+}
+.navbar-brand span {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+nav.scrolled .navbar-brand span {
+    color: #333333;
+}
+.logo{
+    font-size: 28px;
+    color: #fff;
+
+}
+.span{
+    color: #fe9445;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 20px;
+   
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+nav ul li a:hover{
+    color: #fe9445;
+    transition: .3s;
+}
+button{
+    border: none;
+    background: #fe9445;
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: .4s;
+}
+button:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+nav img{
+    width: 15%;
+    height: 15%;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+nav.scrolled img {
+    width: 8%;
+    height: 8%;
+}
+.menu-icon {
+    display: none;
+}
+
+
+
+.container{
+    padding: 0;
+    width: 100%;
+   
+    overflow: hidden;
+    
+   
+}
+
+.slide-wrapper{
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.slider{
+    display: flex; 
+    aspect-ratio: 16 / 9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    height: 100%;
+    
+    
+}
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    height: 100%;
+    background-color: black;
+    filter: brightness(40%);
+    z-index: -10;
+}
+
+/* Novo estilo para slides com overlay (substitui imagens diretas) */
+.slide{
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  
+}
+
+.slide::after{
+  /* degradê escuro de baixo para cima para destacar o texto
+     começa mais escuro na parte inferior e vai clareando até desaparecer
+     cerca da metade/um pouco acima conforme solicitado */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.916) 0%, rgba(0, 0, 0, 0.808) 30%, rgba(0, 0, 0, 0.655) 55%, rgba(0, 0, 0, 0.747) 100%);
+  z-index: 0;
+}
+
+.slide .overlay{
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza verticalmente */
+  align-items: center;     /* centraliza horizontalmente */
+  padding-left: 8%;
+  padding-right: 8%;
+  color: #fff;
+  text-align: center; /* centraliza texto */
+}
+
+
+.slide .overlay small{
+  color: #fe9445;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.slide .overlay h1{
+  font-size: 64px;
+  margin: 10px 0 12px 0;
+  line-height: 1.02;
+  font-weight: 300;
+  max-width: 100%;
+}
+
+.slide .overlay p{
+  max-width: 70%;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ajustes para telas pequenas -> reduzir fonte e largura do texto */
+@media screen and (max-width: 750px){
+  .slide .overlay{
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza verticalmente */
+  align-items: center;     /* centraliza horizontalmente */
+  padding-left: 8%;
+  padding-right: 8%;
+  color: #fff;
+  text-align: center; /* centraliza texto */
+}
+  .slide .overlay h1{ font-size: 34px; }
+  .slide .overlay p{ max-width: 92%; font-size: 16px; }
+  .btn{ padding:10px 18px; }
+}
+
+.cta{ display:flex; gap: 16px; align-items:center; }
+.btn{ display:inline-block; padding:12px 26px; border-radius:30px; text-decoration:none; font-weight:700; }
+.btn-primary{ background:#fe9445; color:#fff; border: 2px solid #fe9445; }
+.btn-primary:hover{ transform: translateY(-2px); }
+.btn-outline{ background: transparent; color:#fff; border: 2px solid rgba(255,255,255,0.8); }
+.btn-outline:hover{ background: rgba(255,255,255,0.06); }
+
+.slider-arrow{ position:absolute; top:50%; transform:translateY(-50%); z-index:3; background: rgba(0,0,0,0.35); border:none; color:#fff; width:48px; height:48px; border-radius:50%; font-size:28px; cursor:pointer; }
+.slider-arrow.prev{ left:18px; }
+.slider-arrow.next{ right:18px; }
+
+.slider-dots{ display:flex; gap:10px; justify-content:center; position:absolute; left:50%; transform:translateX(-50%); bottom:24px; z-index:3; }
+.slider-dots button{ width:10px; height:10px; border-radius:50%; border:none; background:rgba(255,255,255,0.45); cursor:pointer; }
+.slider-dots button.active{ background:#fe9445; box-shadow:0 0 0 4px rgba(254,148,69,0.12);} 
+
+/* Garantir que os indicadores nativos fiquem visíveis */
+.slider-nav{ visibility: visible; }
+
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    visibility: hidden;
+}
+.slider-nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 2ms;
+}
+.slider-nav a:hover{
+    opacity: 1;
+}
+
+.Slogan{
+    color: #fff;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 35%;
+}
+.Slogan h1{
+    font-size: 70px;
+    font-weight: bold;
+}
+.Slogan h1 span{
+    font-size: 130px;
+}
+.Slogan h2{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 80;
+    font-family: cursive;
+}
+
+.Title-services{
+    text-align: center;
+    color: #fe9445;
+    font-size: xxx-large;
+}
+
+.containerCards{
+    padding-left: 9%;
+    padding-right: 8%;
+    display: grid;
+    grid-gap: 5%;
+    grid-template-areas: "card1 card2 card3 card4";
+    grid-template-columns: 20% 20% 20% 20%;
+    text-align: center;
+    margin-top: 5%;
+}
+  
+article img{
+    width: 40%;
+    height: 40%;
+    text-align: center;
+    align-items: center;
+    transition: 0.3s;
+}
+article img:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+  }
+.containerCards article{
+    width: 100%;
+}
+
+.containerAbout{
+    padding-left: 10%;
+    padding-right: 20%;
+    display: grid;
+    grid-gap: 10%;
+    grid-template-areas: "card1 card2";
+    grid-template-columns: 50% 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/* ======= Seção Portfólio (layout igual à imagem enviada) ======= */
+.portfolio-section{
+  max-width: 1200px;
+  margin: 4.5rem auto;
+  padding: 0 6%;
+}
+.portfolio-inner{
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 40px;
+  align-items: center;
+}
+.portfolio-text small{ color: #e6b23a; font-weight:700; letter-spacing:1px; }
+.portfolio-text h2{ font-size: 44px; margin: 10px 0 18px; color: #222; line-height:1.05; }
+.portfolio-text p{ color: #6f6f6f; font-size: 16px; margin-bottom: 12px; }
+
+.portfolio-media{ display:flex; justify-content:flex-end; }
+.portfolio-thumb{ position: relative; width: 100%; max-width: 520px; border-radius: 18px;  box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+.portfolio-thumb img{ display:block; width:100%; height:420px; object-fit:cover; transition: opacity .5s ease; border-radius: 18px; }
+
+.portfolio-badge{ position: absolute;  bottom: -18px; background: linear-gradient(180deg,#e6b23a,#fe9445); color: #fff; padding: 22px 26px; border-radius: 12px; box-shadow: 0 14px 30px rgba(0,0,0,0.15); transform: translateY(0); }
+.portfolio-badge .badge-number{ font-size: 36px; font-weight:700; line-height:1; }
+.portfolio-badge .badge-sub{ font-size:12px; font-weight:800; letter-spacing:1px; margin-top:6px; }
+
+/* Responsivo: empilha colunas em telas pequenas */
+@media screen and (max-width: 900px){
+  .portfolio-inner{ grid-template-columns: 1fr; }
+  .portfolio-media{ order: -1; display:flex; justify-content:center; }
+  .portfolio-thumb img{ height:320px; }
+  .portfolio-badge{ left: 50%; transform: translate(-50%,0); bottom: -18px; }
+}
+
+.card1 img{
+    width: 100%;
+    height: 100%;
+}
+.card2{
+    margin-top: 10%;
+}
+.card2 p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+
+
+main {
+    display: grid;
+    grid-template-areas: "card1 card2 card3";
+    grid-template-columns: 28% 28% 28%;
+    grid-gap: 3%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .card {
+    width: 100%;
+    height: 30rem;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    color: white;
+    
+   
+    img {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.9;
+      transition: opacity .2s ease-out;
+    }
+  
+    h2 {
+      position: absolute;
+      inset: auto auto 30px 30px;
+      margin: 0;
+      transition: inset .3s .3s ease-out;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+    
+    p, a {
+      position: absolute;
+      opacity: 0;
+      max-width: 80%;
+      transition: opacity .3s ease-out;
+    }
+    
+    p {
+      inset: auto auto 80px 30px;
+    }
+    
+    a {
+      inset: auto auto 40px 30px;
+      color: inherit;
+      text-decoration: none;
+    }
+    .button{
+        color: #fe9445;
+    }
+    
+    &:hover h2 {
+      inset: auto auto 220px 30px;
+      transition: inset .3s ease-out;
+    }
+    
+    &:hover p, &:hover a {
+      opacity: 1;
+      transition: opacity .5s .1s ease-in;
+    }
+    
+    &:hover img {
+      transition: opacity .3s ease-in;
+      opacity: 1;
+      filter: brightness(40%);
+    }
+  
+  }
+  
+  .material-symbols-outlined {
+    vertical-align: middle;
+  }
+
+/*INICIO DE CSS DA GALERIA DE FOTOS*/
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* espaço entre botão e galeria */
+    position: relative;
+  }
+
+  /* Botões */
+  #backBtn,
+  #nextBtn {
+    width: 30px;
+    cursor: pointer;
+  }
+
+/* Galeria principal (scroll horizontal) */
+.gallery {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth; /* para animação suave ao clicar nos botões */
+    width: 80vw; /* largura da galeria */
+   
+  }
+
+  /* Cada “slide” (cada imagem isolada) */
+  .gallery > div {
+    flex: none; 
+    width: calc(80vw / 3); /* 3 imagens simultâneas em telas grandes */
+    box-sizing: border-box;
+    padding: 5px; /* espaçamento interno */
+  }
+
+  /* Ajuste das imagens */
+  .gallery > div img {
+    width: 100%;
+    transition: transform 0.5s;
+  }
+
+  .gallery > div img:hover {
+    transform: scale(1.02);
+  }
+
+  /* Oculta a scrollbar no Chrome/Safari */
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+   /* ----- Indicadores (dots) ----- */
+   .slider-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .slider-indicators .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: gray;
+    cursor: pointer;
+   
+  }
+  .slider-indicators .dot.active {
+    background: black;
+  }
+
+  /* ====== STATS (bloco abaixo do carrossel) ====== */
+  .stats{
+    background: lab(94 2.2 1.85);
+    padding: 80px 10%;
+  }
+  .stats-container{
+    display: flex;
+    gap: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .stat{
+    text-align: center;
+    flex: 1 1 0;
+  }
+  .stat-icon{
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #fe9445;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px auto;
+  }
+  .stat-icon img{ width:36px; height:36px; filter: hue-rotate(10deg) saturate(1.3); }
+  .stat-number{
+    color: #fe9445; /* tom dourado/mostarda */
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .stat-title{
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px;
+  }
+  .stat-sub{
+    color: #888;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 900px){
+    .stats-container{ gap: 1rem; }
+    .stat-number{ font-size: 28px; }
+  }
+
+  @media screen and (max-width: 700px){
+    .stats-container{
+      flex-direction: column;
+      gap: 2.2rem;
+      padding: 0 4%;
+    }
+    .stats{ padding: 36px 0; }
+    .stat-icon{ width:58px; height:58px; }
+  }
+
+  /* ====== NOSSOS SERVIÇOS (cards) ====== */
+  .our-services{
+    background: #fbf6f5;
+    padding: 56px 0;
+  }
+  .services-grid{
+    display: flex;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .service-card{
+    flex: 1 1 0;
+    text-align: left;
+  
+  }
+  .service-image{
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+  .service-image img{ width:100%; height:100%; object-fit:cover; display:block; transition: transform .5s ease; }
+  .service-card:hover .service-image img{ transform: scale(1.03); }
+  .service-icon{
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #fe9445;
+    display:flex; align-items:center; justify-content:center;
+    margin-top: 18px;
+  }
+  .service-icon img{ width:28px; height:28px; filter: saturate(1.2); }
+  .service-card h3{ font-size: 22px; margin: 14px 0 8px 0; font-weight:700; color:#111; }
+  .service-desc{ color:#7a7a7a; margin-bottom: 14px; line-height:1.6; }
+  .service-link{ color:#fe9445; font-weight:700; text-decoration:none; }
+  .service-link:hover{ text-decoration: underline; }
+
+  .services-cta{ display:flex; justify-content:center; margin-top:40px; }
+  .services-cta .btn-ghost{ background:#fe9445; color:#fff; padding:14px 42px; border-radius:40px; text-decoration:none; font-weight:700; box-shadow: 0 6px 18px rgba(254,148,69,0.18); }
+  @media screen and (max-width: 1024px){
+    .service-image{ height:160px; }
+    .service-card h3{ font-size:20px; }
+  }
+
+  @media screen and (max-width: 800px){
+    .services-grid{ flex-direction: column; gap: 2.2rem; }
+    .service-card{ text-align: center; }
+    .service-icon{ margin: 12px auto; }
+    .service-desc{ max-width: 90%; margin: 0 auto 14px; }
+  }
+
+  /* ====== CTA HERO (antes do footer) ====== */
+  .cta-hero{
+    background: linear-gradient(90deg, #e6b23a 0%, #c9962b 50%, #b6832a 100%);
+    padding: 64px 8%;
+    color: #fff;
+  }
+  .cta-hero-inner{
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cta-hero h2{
+    font-size: 48px;
+    margin: 0 0 18px 0;
+    font-weight: 400;
+  }
+  .cta-hero p{
+    color: rgba(255,255,255,0.95);
+    margin: 0 0 28px 0;
+    font-size: 18px;
+  }
+  .cta-buttons{ display:flex; gap:20px; justify-content:center; align-items:center; }
+  .cta-btn{ padding:14px 36px; border-radius:40px; text-decoration:none; font-weight:700; }
+  .cta-btn.primary{ background:#fff; color:#d99d1f; }
+  .cta-btn.primary:hover{ opacity:0.95; }
+  .cta-btn.outline{ background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.85); }
+  .cta-btn.outline:hover{ background: rgba(255,255,255,0.06); }
+
+  @media screen and (max-width: 900px){
+    .cta-hero h2{ font-size: 34px; }
+    .cta-hero p{ font-size: 16px; }
+    .cta-buttons{ flex-direction: column; gap:12px; }
+    .cta-btn{ width: 80%; max-width: 360px; }
+  }
+
+  .modal {
+    display: none;              /* escondido por padrão */
+    position: fixed;            /* fica em cima de tudo */
+    z-index: 9999;             /* grande valor para ficar acima de qualquer elemento */
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8); /* fundo escuro translúcido */
+    align-items: center;        /* centraliza verticalmente */
+    justify-content: center;    /* centraliza horizontalmente */
+  }
+  /* Conteúdo da imagem dentro da modal */
+  .modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    display: block;
+    margin: auto;
+    position: relative;
+  }
+  /* Botão de fechar (X) */
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  /* Navegação dentro da modal (setas) */
+  .modal-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* para que clique “atravesse” a área e só funcione no ícone */
+  }
+  .modal-nav span {
+    pointer-events: auto; /* reativa clique nos ícones */
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+    
+    margin: 0 12px;
+    user-select: none; /* evita seleção de texto ao clicar */
+  }
+
+/* INICIO DE CSS FOOTER*/
+footer{
+    
+    background-color: #232323;
+    height: auto;
+    color: #bbbbbb;
+    padding: 5% 8%;
+    padding-bottom: 1vh;
+}
+
+.container-footer{
+    display: grid;
+    grid-template-areas: " text1 text2 button";
+    grid-template-columns: 30% 28% 34%;
+    grid-gap: 4%;
+}
+.container-footer h5{
+    color: white;
+    margin-bottom: 7%;
+    font-size: 15px;
+    margin-top: 7%;
+}
+.container-footer p{
+    margin-bottom: 7%;
+}
+
+.container-footer a{
+    margin-bottom: 15px;
+    color: #bbbbbb;
+    text-decoration: none;
+}
+.container-footer img{
+    grid-area: Fimg;
+    width: 100%;
+}
+.text-footer{
+    grid-area: text1;
+}
+.text2-footer{
+    grid-area: text2;
+}
+
+.copy{
+    text-align: center;
+}
+/* Estilo para o ícone de scroll */
+#scroll-down {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Oculto por padrão */
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  
+    color: white;
+   
+  }
+  
+  /* Se desejar um efeito de fade quando o ícone aparece */
+  #scroll-down.show {
+    display: block;
+    opacity: 1;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  @keyframes pulse {
+    0% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.2);
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+
+  
+  #scrollToTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: #fe9445;
+    color: #fff;
+    border: none;
+    border-radius: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+  }
+  /* Classe que torna o botão visível */
+  #scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  #scrollToTopBtn svg{
+    color: #fff;
+  }
+
+@media screen and (max-width: 750px){
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        
+
+    }
+    
+    html, body {
+        width: 100vw;
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+    }
+    nav img{
+        width: 12vh;
+        height: 8vh;
+        position: absolute;
+        left: 4vh;
+        top: 2vh;
+        z-index: 1000;
+    }
+    nav.scrolled{
+        padding: 15px;
+        height: 14vh;
+    }
+    nav.scrolled a {
+    color: #fff;
+}
+    nav.scrolled img {
+        width: 10vh;
+        height: 7vh;
+        top: 1vh;
+}
+nav.scrolled .menu-icon {
+        display: block;
+        font-size: 35px;
+        cursor: pointer;
+        color: #333;
+        position: absolute;
+        top: 20px;
+        right: 10%;
+        z-index: 100;
+    }
+    
+    /* Navbar brand responsivo */
+    .navbar-brand {
+        display: flex;
+        opacity: 0;
+    }
+    
+    nav.scrolled .navbar-brand {
+        display: flex; 
+        opacity: 1;
+        /* width: 0px; */
+        margin-top: 5%;
+        margin-left: 29%;
+    }
+
+    /* Oculta a lista e o botão por padrão */
+    #nav-list,
+    nav > button {
+        display: none;
+    }
+
+    /* Exibe o ícone do menu */
+    .menu-icon {
+        display: block;
+        font-size: 35px;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        top: 20px;
+        right: 10%;
+        z-index: 100;
+    }
+
+    /* Estiliza a lista do menu para aparecer como um dropdown */
+    #nav-list {
+        line-height: 2;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        /* right: 10%; */
+        background: rgb(0 0 0 / 90%);
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+        padding: 37vh 10px;
+        height: 100vh;
+        font-size: 18px;
+    }
+
+    #nav-list.active {
+        display: flex;
+        z-index: 10;
+    }
+
+    #nav-list li {
+        padding: 10px;
+    }
+
+    nav > button {
+        position: absolute;
+        top: 25vh;
+        right: 15%;
+        width: 271px;
+        text-align: center;
+        background: #fe9445;
+        border-radius: 23px;
+        padding: 5px 0;
+        z-index: 15;
+    }
+
+    nav > button.active {
+        display: block;
+    }
+    .container{
+        height: 100vh;
+        overflow: hidden;
+    }
+    .slide-wrapper{
+        height: 100%;
+    }
+    .slider{
+      height: 100vh;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory; /* manter snap horizontal no mobile */
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .slider img{
+      height: 100vh;
+      overflow: hidden;
+      object-fit: cover;
+    }
+    /* garantir que cada slide ocupe 100% da viewport no mobile */
+    .slide{ min-width: 100%; }
+    .conteudo{
+        max-width: 100%;
+        padding: 5vh;
+    }
+    .Slogan{
+        top: 0;
+        width: 45vh;
+        padding: 4vh;
+        left: 0;
+        height: 150vh;
+        padding-top: 42vh;
+    }
+    .Slogan h1{
+        font-size: 36px;
+    }
+    .Slogan h1 span{
+        font-size: 62px;
+    }
+    .Slogan h2{
+        font-size: 20px;
+    }
+    
+    .Title-services{
+        text-align: center;
+        font-size: 25px;
+        margin-top: 5vh;
+    }
+    .containerAbout{
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 8vh;
+    }
+    .card2 p{
+        text-align: center;
+    }
+
+    main{
+        display: block;
+        padding: 0;
+        margin: 0;
+        margin-top: 3vh;
+        margin-bottom: 7vh;
+    }
+
+    .card{
+        margin-bottom: 4vh;
+        width: 100%;
+        height: 39vh;
+    }
+    .containerCards{
+        display: block;
+    }
+    .containerCards article{
+        margin-bottom: 2vh;
+    }
+    .card-box h2{
+        font-size: 20px;
+        margin-top: 2vh;
+        margin-bottom: 5vh;
+        font-weight: normal;
+    }
+    .gallery-wrap{
+        
+        left: 0;
+        right: 0;
+        /* margin: -5vh; */
+        margin-left: -5vh;
+        margin-right: -5vh;
+    }
+    .gallery > div {
+        width: 80vw; /* 1 imagem por "slide" */
+      } 
+    footer{
+        width: 100%;
+        height: auto;
+        
+       
+    }
+    .container-footer{
+        display: block;
+        text-align: center;
+    }
+    .text-footer{
+        display: block;
+    }
+    .text2-footer{
+        display: block;
+    }
+    .text2-footer a{
+        margin-top: 2vh;
+    }
+    .text3-footer{
+        display: block;
+    }
+    .text3-footer button{
+        margin: 2vh;
+        border-radius: 12px;
+    }
+    .container-footer img{
+        width: 50%;
+        margin-top: 15%;
+    }
+    .container-footer h5{
+        font-size: 23px;
+    }
+    .container-footer p{
+        font-size: 19px;
+    }
+    .copy{
+        text-align: center;
+        margin-top: 10px;
+    }
+}

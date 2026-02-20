@@ -1,0 +1,924 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #333333;
+    line-height: 1.8;
+    background-image: url(/img/tosco.jpg);
+   
+}
+/* LOADER - Ícone de construção martelando */
+.loader-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.loader-overlay.hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader-icon{
+    animation: martelar 0.8s ease-in-out infinite;
+    width: 80px;
+    height: 80px;
+    filter: invert(47%) sepia(93%) saturate(1360%) hue-rotate(-15deg) brightness(101%) contrast(101%);
+
+}
+
+@keyframes martelar{
+    0%{
+        transform: rotate(-15deg);
+    }
+    50%{
+        transform: rotate(15deg);
+    }
+    100%{
+        transform: rotate(-15deg);
+    }
+}
+
+.spinner-circle{
+    animation: spin 2s linear infinite;
+    transform-origin: 50px 50px;
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.loader-text{
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+.topnav{
+
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+nav{
+    top: 0;
+    left: 0;
+    right: 0;                /* garante largura exata */
+                /* mantém responsivo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
+    position: fixed;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    z-index: 1000;
+    background-color: transparent;
+}
+/* Quando a página é rolada, o navbar recebe a classe "scrolled" */
+nav.scrolled {
+    background-color: white;
+    padding: 15px 10%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Links quando o navbar estiver branco */
+nav.scrolled a {
+    color: #333;
+}
+/* Logo text que aparece ao rolar - posicionado de forma absoluta para não empurrar elementos */
+.navbar-brand {
+    position: absolute;
+    left:25%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+nav.scrolled .navbar-brand {
+    opacity: 1;
+}
+.navbar-brand span {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+nav.scrolled .navbar-brand span {
+    color: #333333;
+}
+nav.scrolled img {
+    width: 8%;
+    height: 8%;
+}
+.logo{
+    font-size: 28px;
+    color: #fff;
+
+}
+.span{
+    color: #fe9445;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover{
+    color: #fe9445;
+    transition: .3s;
+}
+button{
+    border: none;
+    background: #fe9445;
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: .4s;
+}
+button:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+nav img{
+    width: 15%;
+    height: 15%;
+
+}
+.menu-icon {
+    display: none;
+}
+
+.container {
+    padding: 0;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    position: relative; /* Necessário para posicionar elementos filhos absolutos */
+}
+
+/* Adiciona uma sobreposição de degradê branco */
+.container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48%;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0%) 0%, rgb(255 255 255 / 76%) 60%, rgba(255, 255, 255, 1) 100%);
+    z-index: 0;
+}
+
+.container h1 {
+    position: absolute;
+    top: 34%;
+    left: 0%;
+    transform: translateX(-50%);
+    
+    color: #fe9445;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+
+.slide-wrapper{
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.slider{
+    display: flex; 
+    aspect-ratio: 16 / 9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    height: 100%;
+    
+}
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    height: 100%;
+    background-color: black;
+}
+
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    visibility: hidden;
+}
+.slider-nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 2ms;
+}
+.slider-nav a:hover{
+    opacity: 1;
+}
+
+.Title-services{
+    text-align: center;
+    color: #fe9445;
+    font-size: xxx-large;
+    margin-top: 5%;
+}
+
+.containerCards{
+    padding-left: 20%;
+    padding-right: 20%;
+    display: grid;
+    grid-gap: 5%;
+    grid-template-areas: "card1 card2 card3 card4";
+    grid-template-columns: 22% 22% 22% 22%;
+    text-align: center;
+    margin-top: 5%;
+}
+article img{
+    width: 40%;
+    height: 40%;
+    text-align: center;
+    align-items: center;
+}
+
+/*CARDS SERVICES*/
+
+main {
+    display: grid;
+    grid-template-areas: "card1 card2 card3";
+    grid-template-columns: 28% 28% 28%;
+    grid-gap: 3%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .card {
+    width: 100%;
+    height: 30rem;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    color: white;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.888);
+   
+     img {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.9;
+      transition: opacity .2s ease-out;
+    }
+  
+    h2 {
+      position: absolute;
+      inset: auto auto 30px 30px;
+      margin: 0;
+      transition: inset .3s .3s ease-out;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+    
+    p, a {
+      position: absolute;
+      opacity: 0;
+      max-width: 80%;
+      transition: opacity .3s ease-out;
+    }
+    
+    p {
+      inset: auto auto 80px 30px;
+      font-size: 17px;
+      margin-bottom: 4vh;
+    }
+    
+    a {
+      inset: auto auto 40px 30px;
+      color: inherit;
+      text-decoration: none;
+    }
+    .button{
+        color: white;
+        background-color: #fe9445;
+        padding: 10px;
+        border-radius: 6px;
+    }
+    
+    &:hover h2 {
+      inset: auto auto 400px 30px;
+      transition: inset .3s ease-out;
+      
+    }
+    
+    &:hover p, &:hover a {
+      opacity: 1;
+      transition: opacity .5s .1s ease-in;
+    }
+    
+    &:hover img {
+      transition: opacity .3s ease-in;
+      opacity: 1;
+      filter: brightness(40%); 
+     
+       
+    }
+  
+  }
+  
+  .material-symbols-outlined {
+    vertical-align: middle;
+  }
+
+
+  .conteudo{
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    
+}
+
+h1{
+    color: #585858;
+    text-align: center;
+    margin-top: 20%;
+    animation-duration: 2s;
+    animation-name: h1;
+}
+
+
+h2{
+    color:#535050;
+    text-align: center;
+    margin-top: 40px;
+    animation-duration: 3s;
+    animation-name: h2;
+
+}
+
+
+h3{
+    margin-bottom: 10px;
+}
+
+
+
+.container1{
+ 
+  margin-top: 5%;
+  display: grid;
+  grid-gap: 3%;
+  grid-template-areas: "card1 card2 card3";
+  grid-template-columns: 31.5% 31.5% 31.5%;
+}
+.cards1 {
+    
+    grid-area: card1;
+    padding-bottom: 40px;
+    border-radius: 15px;
+    border: solid 1px rgb(166 166 166 / 38%);
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+.cards1:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.199);
+}  
+  /* Container do carrossel */
+  .carousel-container {
+    width: 100%;
+    height: 40%; /* Define a área para as imagens */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Agrupa as imagens em linha */
+  .carousel-inner {
+    display: flex;
+    width: 200%; /* 3 imagens: 100% x 3 */
+    transition: transform 0.5s ease-in-out;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  /* Cada imagem ocupa 100% do container */
+  .carousel-img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    object-fit: contain;  /* Mantém a proporção sem cortar */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  
+
+.cards2{
+    background-color: white;
+    grid-area: card2; 
+    padding-bottom: 40px;
+    border-radius: 15px;
+    border: solid 1px rgb(166 166 166 / 38%);
+    height: 70vh;
+    transition: 0.3s;
+  
+}
+.cards2:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.199);
+}
+.carousel-inner2 {
+    display: flex;
+    width: 200%; /* 3 imagens: 100% x 3 */
+    transition: transform 0.5s ease-in-out;
+  }
+
+.cards3{
+    background-color: white;
+    grid-area: card3; 
+    padding-bottom: 40px;
+    border-radius: 15px;
+    border: solid 1px rgb(166 166 166 / 38%);
+    height: 70vh;
+    transition: 0.3s;
+  
+}
+.cards3:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.199);
+}
+.carousel-inner3 {
+    display: flex;
+    width: 200%; /* 3 imagens: 100% x 3 */
+    transition: transform 0.5s ease-in-out;
+  }
+
+.cards-box{
+    padding: 10px 20px;
+}
+.buttonContact{
+    background-color: #fe9445;
+    padding: 8px 13px;
+    text-decoration: none;
+    color: white;
+    /* justify-content: flex-end; */
+    /* margin-bottom: 0; */
+    /* align-self: end; */
+  
+    border-radius: 9px;
+}
+
+/* INICIO DE CSS FOOTER*/
+
+footer{
+    margin-top: 10%;
+    background-color: #232323;
+    height: auto;
+    color: #bbbbbb;
+    padding: 5% 8%;
+    padding-bottom: 1vh;
+}
+
+.container-footer{
+    display: grid;
+    grid-template-areas: " text1 text2 button";
+    grid-template-columns: 30% 28% 34%;
+    grid-gap: 4%;
+}
+.container-footer h5{
+    color: white;
+    margin-bottom: 7%;
+    font-size: 15px;
+    margin-top: 7%;
+}
+.container-footer p{
+    margin-bottom: 7%;
+}
+
+.container-footer a{
+    margin-bottom: 15px;
+    color: #bbbbbb;
+    text-decoration: none;
+}
+.container-footer img{
+    /*grid-area: Fimg;*/
+    width: 100%;
+}
+.text-footer{
+    grid-area: text1;
+}
+.text2-footer{
+    grid-area: text2;
+}
+
+.copy{
+    text-align: center;
+}
+
+/* Estilo para o ícone de scroll */
+#scroll-down {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Oculto por padrão */
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  
+    color: white;
+    
+   
+  }
+  
+  /* Se desejar um efeito de fade quando o ícone aparece */
+  #scroll-down.show {
+    display: block;
+    opacity: 1;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  @keyframes pulse {
+    0% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.2);
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+
+
+  #scrollToTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: #fe9445;
+    color: #fff;
+    border: none;
+    border-radius: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+  }
+  /* Classe que torna o botão visível */
+  #scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  #scrollToTopBtn svg{
+    color: #fff;
+  }
+ 
+  
+
+@media screen and (max-width: 750px){
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        
+
+    }
+    
+    html, body {
+        width: 100vw;
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+      nav {
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+    }
+    nav img{
+        width: 12vh;
+        height: 8vh;
+        position: absolute;
+        left: 4vh;
+        top: 2vh;
+        z-index: 1000;
+    }
+    nav.scrolled{
+        padding: 15px;
+        height: 10%;
+    }
+        nav.scrolled a {
+    color: #fff;
+}
+    nav.scrolled img {
+        width: 10vh;
+        height: 7vh;
+        top: 1vh;
+}
+nav.scrolled .menu-icon {
+        display: block;
+        font-size: 35px;
+        cursor: pointer;
+        color: #333;
+        position: absolute;
+        top: 20px;
+        right: 10%;
+        z-index: 100;
+    }
+    
+    /* Navbar brand responsivo */
+    .navbar-brand {
+        display: flex;
+        opacity: 0;
+    }
+    
+    nav.scrolled .navbar-brand {
+        display: flex; 
+        opacity: 1;
+        /* width: 0px; */
+        margin-top: 5%;
+        margin-left: 29%;
+    }
+
+
+    /* Oculta a lista e o botão por padrão */
+    #nav-list,
+    nav > button {
+        display: none;
+    }
+
+    /* Exibe o ícone do menu */
+    .menu-icon {
+        display: block;
+        font-size: 35px;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        top: 20px;
+        right: 10%;
+        z-index: 100;
+    }
+
+    /* Estiliza a lista do menu para aparecer como um dropdown */
+    #nav-list {
+        line-height: 2;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        /* right: 10%; */
+        background: rgb(0 0 0 / 90%);
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+        padding: 37vh 10px;
+        height: 100vh;
+        font-size: 18px;
+        
+    }
+
+    #nav-list.active {
+        display: flex;
+        z-index: 10;
+    }
+
+    #nav-list li {
+        padding: 10px;
+    }
+
+    nav > button {
+        position: absolute;
+        top: 25vh;
+        right: 15%;
+        width: 271px;
+        text-align: center;
+        background: #fe9445;
+        border-radius: 23px;
+        padding: 10px 0;
+        z-index: 15;
+    }
+
+    nav > button.active {
+        display: block;
+    }
+    .container{
+        height: 30vh;
+        box-shadow: none;
+        overflow: hidden;
+    }
+    .slider{
+        box-shadow: none;
+        overflow-y: hidden;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+    }
+
+    .Title-services{
+        font-size: 25px
+    }
+
+    main{
+        display: block;
+        padding: 4vh;
+        margin: 0;
+    }
+
+    .card{
+        margin-bottom: 4vh;
+        width: 100%;
+        height: 39vh;
+    }
+    .container1{
+        display: block;
+    }
+    .cards1{
+        margin-bottom: 10%;
+        padding-bottom: 0;
+    }
+    .cards2{
+        margin-bottom: 10%;
+        padding-bottom: 0;
+        height: 60vh;
+    }
+    .cards3{
+        margin-bottom: 10%;
+        padding-bottom: 0;
+        height: 60vh;
+    }
+    .cards-box{
+        margin-bottom: 2vh;
+    }
+    .buttonContact{
+        margin-top: 5vh;
+    }
+    
+
+    footer{
+        width: 100%;
+        height: auto;
+        margin-top: 20%;
+    }
+
+    .container-footer{
+        display: block;
+        text-align: center;
+    }
+    .text-footer{
+        display: block;
+    }
+    .text2-footer{
+        display: block;
+    }
+    .text2-footer a{
+        margin-top: 2vh;
+    }
+    .text3-footer{
+        display: block;
+    }
+    .text3-footer button{
+        margin: 2vh;
+        border-radius: 12px;
+    }
+    .container-footer img{
+        width: 50%;
+        margin-top: 15%;
+    }
+    .container-footer h5{
+        font-size: 23px;
+    }
+    .container-footer p{
+        font-size: 19px;
+    }
+    .copy{
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+/* ====== SECTION: detalhes de serviços (cards) ====== */
+
+.services-details-inner{ max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 32px; }
+
+.service-category h3{ margin: 0 0 18px 0; font-size: 26px; color: #333; text-align: center;}
+.service-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.service-item{ background: #fff; border-radius: 10px; padding: 16px; display:flex; flex-direction:column; align-items:flex-start; gap:12px;}
+.service-thumb{ width:100%; height:140px; border-radius:10px; overflow:hidden; }
+.service-thumb img{ width:100%; height:100%; object-fit:cover; display:block; transition: transform .4s ease; }
+.service-icon{ width:56px; height:56px; border-radius:50%; background: #fe9445; display:flex; align-items:center; justify-content:center; margin-top:18px; margin-left:18px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+.service-icon img{ width:26px; height:26px; }
+.service-item h4{ margin:8px 0 4px 0; font-size:20px; color:#222; text-align: center;}
+.service-desc{ color:#7a7a7a; font-size:15px; margin:0 0 10px 0; line-height:1.5; }
+.request-quote{ margin-top:auto; text-decoration:none; color:#e86f1e; font-weight:700; }
+
+@media screen and (max-width: 1024px){
+    .service-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (max-width: 700px){
+    .services-details{ padding: 28px 4%; }
+    .service-grid{ grid-template-columns: 1fr; }
+    .service-item{ align-items:center; text-align:center; }
+    .service-thumb{ height:160px; }
+    .service-icon{ margin-left: auto; margin-right: auto; margin-top:-32px; }
+    .service-desc{ margin:8px 0 12px 0; }
+    .service-category h3{ text-align:center; }
+}
+
+/* Mobile carousel for remaining services (featured-first layout) */
+@media screen and (max-width: 700px){
+    .service-category { padding: 0 4%; }
+    .service-item { box-sizing: border-box; }
+
+    /* removed featured-item: all items will be part of the carousel */
+
+    /* Carousel container containing the remaining .service-item cards */
+    .service-carousel {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding-bottom: 12px; /* espaço para os dots */
+    }
+
+    .service-carousel .service-item {
+        flex: 0 0 100%;
+        min-width: 100%;
+        scroll-snap-align: center;
+        box-sizing: border-box;
+        margin: 0; /* cards inline no gap outside */
+    }
+
+    /* Dots */
+    .service-dots { display:flex; gap:8px; justify-content:center; margin-top:8px; }
+    .service-dots button{ width:10px; height:10px; border-radius:50%; border:none; background:rgba(0,0,0,0.18); padding:0; box-shadow:none; }
+    .service-dots button.active{ background:#fe9445; box-shadow:0 0 0 4px rgba(254,148,69,0.10); }
+
+    /* hide native scrollbar while keeping scroll functionality */
+    .service-carousel { -ms-overflow-style: none; scrollbar-width: none; }
+    .service-carousel::-webkit-scrollbar{ display: none; }
+
+    /* ensure images and content adapt */
+    .service-carousel .service-thumb{ height:140px; border-radius:8px; overflow:hidden; }
+    .service-carousel .service-thumb img{ width:100%; height:100%; object-fit:cover; }
+
+}
