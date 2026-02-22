@@ -14,7 +14,7 @@ import { CheckCircle } from "lucide-react"
 import type { Stat, Feature } from "@/types"
 
 const stats: Stat[] = [
-  { icon: "/icon/Projetos.png", number: "15+", title: "Anos de Excelência", sub: "Referência em construção" },
+  { icon: "/icon/Projetos.png", number: "5+", title: "Anos de Excelência", sub: "Referência em construção" },
   { icon: "/icon/CC.png", number: "5000+", title: "Clientes Satisfeitos", sub: "Histórias de transformação" },
   { icon: "/icon/Blocos.png", number: "150+", title: "Projectos Concluídos", sub: "Obras de qualidade" },
   { icon: "/icon/tranporte.png", number: "98%", title: "Taxa de Satisfação", sub: "Recomendação entre clientes" },
@@ -23,17 +23,17 @@ const stats: Stat[] = [
 const features: Feature[] = [
   {
     icon: "/icon/missao.png",
-    title: "Nossa Missão",
+    title: "Missão",
     description: "Construir com excelência, oferecendo soluções seguras e sustentáveis para nossos clientes.",
   },
   {
     icon: "/icon/visao.png",
-    title: "Nossa Visão",
+    title: "Visão",
     description: "Ser referência em construção civil em Cabo Verde, reconhecida pela qualidade e inovação.",
   },
   {
     icon: "/icon/compromisso.png",
-    title: "Nosso Compromisso",
+    title: "Compromissos",
     description: "Responsabilidade, transparência e suporte pós-obra para garantir sua tranquilidade.",
   },
 ]
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 projectos em realidade com qualidade, eficiência e compromisso.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Com mais de 15 anos de experiência no mercado de Cabo Verde, oferecemos soluções inovadoras para obras
+                Com mais de 5 anos de experiência no mercado de Cabo Verde, oferecemos soluções inovadoras para obras
                 residenciais, comerciais e industriais, garantindo a satisfação dos nossos clientes em cada projecto.
               </p>
 
@@ -117,11 +117,11 @@ export default function AboutPage() {
                   className="w-full h-[500px] object-cover"
                 />
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-gradient-to-br from-[#fe9445] to-[#e6b23a] text-white py-8 px-10 rounded-2xl shadow-xl">
+              {/*<div className="absolute -bottom-8 -left-8 bg-gradient-to-br from-[#fe9445] to-[#e6b23a] text-white py-8 px-10 rounded-2xl shadow-xl">
                 <div className="text-5xl font-bold leading-none">15+</div>
                 <div className="text-sm font-bold tracking-wider mt-2">ANOS DE</div>
                 <div className="text-sm font-bold tracking-wider">EXPERIÊNCIA</div>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>

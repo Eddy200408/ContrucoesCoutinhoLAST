@@ -42,7 +42,7 @@ export function Navbar({ activePage = "/" }: NavbarProps) {
           width={100}
           height={10}
           className={`transition-all duration-300 ${scrolled ? "w-12 h-12" : "w-14 h-14"}`}
-          style={{ width: "17vh", height: "10vh" }}
+          style={{ width: "15vh", height: "8vh" }}
         />
         <span
           className={`font-bold text-lg whitespace-nowrap transition-all duration-300 ${

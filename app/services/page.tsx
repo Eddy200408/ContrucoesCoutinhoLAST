@@ -70,7 +70,7 @@ const serviceCategories: ServiceCategory[] = [
       },
       
     ],
-  },
+  },/* 
   {
     title: "Produção e Venda de Blocos",
     services: [
@@ -87,7 +87,7 @@ const serviceCategories: ServiceCategory[] = [
         desc: "Blocos vazados para alvenarias eficientes e económicas.",
       },
     ],
-  },
+  },*/
 ]
 
 export default function ServicesPage() {
