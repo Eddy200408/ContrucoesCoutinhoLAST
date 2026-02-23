@@ -8,6 +8,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { HeroCarousel } from "@/components/hero-carousel"
+import { HeroBanner } from "@/components/hero-banner"
 import { StatsSection } from "@/components/stats-section"
 import { CTASection } from "@/components/cta-section"
 import { GalleryModal } from "@/components/gallery-modal"
@@ -130,7 +131,8 @@ export default function HomePage() {
     <main className="bg-[#f6f5f5] text-[#333] font-sans">
       <Navbar activePage="/" />
 
-      <HeroCarousel slides={slides} />
+      {/* <HeroCarousel slides={slides} />*/}
+      <HeroBanner />
 
       <TestimonialsSection />
 
