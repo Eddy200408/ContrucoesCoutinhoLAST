@@ -23,31 +23,31 @@ const serviceCategories: ServiceCategory[] = [
       },
       {
         image: "/ElaboracaodeProjetos/3.jpg",
-        icon: "/icon/CC.png",
+        icon: "/icon/estabilidade.png",
         title: "Estabilidade",
         desc: "Cálculos estruturais e soluções que garantem segurança e conformidade normativa.",
       },
       {
         image: "/ElaboracaodeProjetos/2.jpg",
-        icon: "/icon/Blocos.png",
+        icon: "/icon/sanitaria.png",
         title: "Rede Hidrosanitária",
         desc: "Instalações hidráulicas dimensionadas para eficiência e durabilidade.",
       },
       {
         image: "/ElaboracaodeProjetos/3.jpg",
-        icon: "/icon/tranporte.png",
+        icon: "/icon/luz.png",
         title: "Rede Elétrica",
         desc: "Projectos e execução de redes eléctricas com e eficiência energética.",
       },
       {
         image: "/ElaboracaodeProjetos/s1.png",
-        icon: "/icon/Projetos.png",
+        icon: "/icon/fiscal.png",
         title: "Fiscalização",
         desc: "Acompanhamento técnico no processo construtivo.",
       },
       {
         image: "/ElaboracaodeProjetos/4.png",
-        icon: "/icon/CC.png",
+        icon: "/icon/house.png",
         title: "Avaliação Imobiliária",
         desc: "Laudos e avaliações profissionais para compra, venda ou financiamento.",
       },
@@ -58,13 +58,13 @@ const serviceCategories: ServiceCategory[] = [
     services: [
       {
         image: "/ElaboracaodeProjetos/OR.jpg",
-        icon: "/icon/CC.png",
+        icon: "/icon/residencial.png",
         title: "Obras Residenciais",
         desc: "Construção e remodelação de residências com gestão completa de obra.",
       },
       {
         image: "/ElaboracaodeProjetos/OC.jpeg",
-        icon: "/icon/CC.png",
+        icon: "/icon/comercial.png",
         title: "Obras Comerciais",
         desc: "Projetos comerciais adaptados às necessidades de operação e segurança.",
       },

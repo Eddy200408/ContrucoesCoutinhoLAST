@@ -55,10 +55,10 @@ const slides: Slide[] = [
 ]
 
 const stats: Stat[] = [
-  { icon: "/icon/Projetos.png", number: "5+", title: "Anos de Excelência", sub: "Referência em construção" },
-  { icon: "/icon/CC.png", number: "5000+", title: "Clientes Satisfeitos", sub: "Histórias de transformação" },
-  { icon: "/icon/Blocos.png", number: "150+", title: "Projectos Concluídos", sub: "Obras de qualidade" },
-  { icon: "/icon/tranporte.png", number: "98%", title: "Taxa de Satisfação", sub: "Recomendação entre clientes" },
+  { icon: "/icon/experiencia.png", number: "5+", title: "Anos de Excelência", sub: "Referência em construção" },
+  { icon: "/icon/cliente.png", number: "5000+", title: "Clientes Satisfeitos", sub: "Histórias de transformação" },
+  { icon: "/icon/projetoDone.png", number: "150+", title: "Projectos Concluídos", sub: "Obras de qualidade" },
+  { icon: "/icon/satisfacao.png", number: "98%", title: "Taxa de Satisfação", sub: "Recomendação entre clientes" },
 ]
 
 const services: Service[] = [
