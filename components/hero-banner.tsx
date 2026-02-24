@@ -8,9 +8,9 @@ export function HeroBanner() {
 
   const images = [
     "service-slide2 - Cópia.jpg",
-    "s1.png",
-    "s2.png",
-    "SãoVicente.jpg",
+    "service-slide3.jpg",
+    "service-slide1.png",
+    "18.png",
   ]
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export function HeroBanner() {
         <div className="flex items-center gap-4 mb-8">
           <span className="block w-10 h-0.5 bg-[#fe9445]" />
           <span className="text-xs font-semibold tracking-[4px] text-[#fe9445] uppercase">
-            DESDE 2009
+            DESDE 2021
           </span>
         </div>
 
@@ -68,9 +68,9 @@ export function HeroBanner() {
         </h1>
 
         <p className="text-[1.05rem] leading-[1.8] max-w-[480px] mb-10 text-white/65 font-light">
-          Qualidade, seguranca e compromisso em cada obra.
+          Construindo sonhos, 
           <br />
-          Construcao civil de referencia em Cabo Verde.
+          Transformando Espaços
         </p>
 
         <div className="flex flex-wrap gap-4">
@@ -92,7 +92,7 @@ export function HeroBanner() {
       {/* Stats bar at bottom right */}
       <div className="absolute bottom-0 right-0 z-[2] flex">
         {[
-          { value: "15+", label: "Anos" },
+          { value: "5+", label: "Anos" },
           { value: "150+", label: "Obras" },
           { value: "98%", label: "Satisfacao" },
         ].map((stat, i) => (

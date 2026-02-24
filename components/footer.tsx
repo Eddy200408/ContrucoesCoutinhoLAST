@@ -17,18 +17,18 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <Link
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/construcoes.coutinho"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-[#fe9445] transition-colors"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-[#00387d] transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </Link>
               <Link
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/construcoes_coutinho/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-[#fe9445] transition-colors"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-[#fc018a] transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </Link>
@@ -133,10 +133,10 @@ export function Footer() {
       <div className="border-t border-gray-800">
         <div className="max-w-6xl mx-auto py-6 px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-center md:text-left">
-            &copy; 2025 Construções Coutinho. Todos os direitos reservados.
+            &copy; 2026 Construções Coutinho. Todos os direitos reservados.
           </p>
           <p className="text-sm flex items-center gap-2">
-            Desenvolvido por <span className="text-[#fe9445] font-semibold">Coutss Soft Solution</span>
+            Desenvolvido por <span className="text-[#fe9445] font-semibold">Eddy Coutinho</span>
             <Link href="https://www.instagram.com/eddycoutinhosantos/" target="_blank" className="hover:text-[#fe9445]">
               <Instagram className="w-4 h-4" />
             </Link>

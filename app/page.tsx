@@ -56,7 +56,7 @@ const slides: Slide[] = [
 
 const stats: Stat[] = [
   { icon: "/icon/experiencia.png", number: "5+", title: "Anos de Excelência", sub: "Referência em construção" },
-  { icon: "/icon/cliente.png", number: "5000+", title: "Clientes Satisfeitos", sub: "Histórias de transformação" },
+  { icon: "/icon/cliente.png", number: "100+", title: "Clientes Satisfeitos", sub: "Histórias de transformação" },
   { icon: "/icon/projetoDone.png", number: "150+", title: "Projectos Concluídos", sub: "Obras de qualidade" },
   { icon: "/icon/satisfacao.png", number: "98%", title: "Taxa de Satisfação", sub: "Recomendação entre clientes" },
 ]
@@ -134,7 +134,7 @@ export default function HomePage() {
       {/* <HeroCarousel slides={slides} />*/}
       <HeroBanner />
 
-      <TestimonialsSection />
+      
 
       <StatsSection stats={stats} />
 
@@ -169,7 +169,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/ElaboracaodeProjetos/4.png"
+                  src="/Galeria/18.png"
                   alt="Projeto concluído"
                   width={600}
                   height={450}
@@ -319,6 +319,7 @@ export default function HomePage() {
         onPrev={() => setModalIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)}
         onNext={() => setModalIndex((prev) => (prev + 1) % galleryImages.length)}
       />
+      <TestimonialsSection />
 
       <CTASection
         title="Pronto para sua Transformação?"

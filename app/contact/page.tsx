@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { PageHeader } from "@/components/page-header"
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send } from "lucide-react"
+import emailjs from "@emailjs/browser"
 
 interface FormData {
   nome: string
@@ -44,12 +45,28 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      await emailjs.send(
+        "service_83bw8aq",
+        "template_uagx7lk",
+        {
+          nome: formData.nome,
+          email: formData.email,
+          telefone: formData.telefone,
+          assunto: formData.assunto,
+          mensagem: formData.mensagem,
+        },
+        "RJIzcPvLJWuFrTalB"
+      )
 
-    setSubmitted(true)
-    setFormData({ nome: "", email: "", telefone: "", assunto: "", mensagem: "" })
+      setSubmitted(true)
+      setFormData({ nome: "", email: "", telefone: "", assunto: "", mensagem: "" })
+    } catch (error) {
+      console.error("Erro ao enviar:", error)
+      alert("Erro ao enviar mensagem.")
+    }
+
     setIsSubmitting(false)
-
     setTimeout(() => setSubmitted(false), 5000)
   }
 
