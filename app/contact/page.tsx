@@ -148,7 +148,7 @@ export default function ContactPage() {
                     href="https://www.facebook.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-xl bg-[#fe9445] flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg"
+                    className="w-12 h-12 rounded-xl bg-[#00387d] flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg"
                   >
                     <Facebook className="w-6 h-6" />
                   </Link>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                     href="https://www.instagram.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-xl bg-[#fe9445] flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg"
+                    className="w-12 h-12 rounded-xl bg-[#fc018a] flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg"
                   >
                     <Instagram className="w-6 h-6" />
                   </Link>
