@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Gera pasta /out com arquivos estáticos
+  output: 'standalone', // Necessário para OpenNext/Cloudflare
   typescript: {
     ignoreBuildErrors: true,
   },
