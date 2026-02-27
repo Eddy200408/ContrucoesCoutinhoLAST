@@ -1,0 +1,31 @@
+name = "construcoescoutinho"
+main = "dist/index.js"
+compatibility_date = "2025-09-27"
+
+[env.production]
+name = "construcoescoutinho"
+
+[[d1_databases]]
+binding = "DB"
+database_id = ""
+
+[build]
+command = "npm run build"
+cwd = "."
+
+[build.upload]
+format = "modules"
+main = "./dist/index.js"
+
+[env.production.build]
+command = "npm run build:production"
+
+[observability]
+enabled = true
+
+[compatibility_flags]
+nodejs_compat = true
+
+[[routes]]
+pattern = "/*"
+zone_name = "construcoes-coutinho.pt"
