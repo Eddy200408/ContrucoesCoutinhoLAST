@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', // Necessário para OpenNext/Cloudflare
+  output: 'export', // Site estático puro - ideal para Cloudflare Pages
   typescript: {
     ignoreBuildErrors: true,
   },
