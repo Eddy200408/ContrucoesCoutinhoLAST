@@ -1,19 +1,7 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Roboto, Roboto_Condensed } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-
-const roboto = Roboto({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-  variable: "--font-roboto",
-})
-
-const robotoCondensed = Roboto_Condensed({
-  subsets: ["latin"],
-  variable: "--font-roboto-condensed",
-})
 
 export const metadata: Metadata = {
   title: "Construções Coutinho",
@@ -40,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt">
-      <body className={`${roboto.variable} ${robotoCondensed.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
       </body>
