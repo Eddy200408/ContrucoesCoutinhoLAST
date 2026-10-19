@@ -8,7 +8,7 @@ import { Crane } from "@/components/crane"
 import { CountUp } from "@/components/count-up"
 import { company } from "@/lib/data"
 
-const images = ["/service-slide2 - Cópia.jpg", "/service-slide3.jpg", "/service-slide1.png", "/18.png"]
+const images = ["/service-slide2-copia.jpg", "/service-slide3.jpg", "/service-slide1.png", "/18.png"]
 
 const heroStats = [
   { value: "5+", label: "Anos" },

@@ -173,7 +173,8 @@ export default function RootLayout({
         <FloatingActions />
         <RevealObserver />
         {/* A Vercel Analytics só funciona quando o site está alojado na Vercel */}
-        {process.env.VERCEL && <Analytics />}
+        {/* O build do Cloudflare (next-on-pages) também define VERCEL=1, por isso exclui-se CF_PAGES */}
+        {process.env.VERCEL && !process.env.CF_PAGES && <Analytics />}
       </body>
     </html>
   )

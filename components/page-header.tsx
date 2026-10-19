@@ -8,7 +8,7 @@ interface PageHeaderProps {
   backgroundImage?: string
 }
 
-export function PageHeader({ title, subtitle, backgroundImage = "/SãoVicente.jpg" }: PageHeaderProps) {
+export function PageHeader({ title, subtitle, backgroundImage = "/sao-vicente.jpg" }: PageHeaderProps) {
   const words = title.split(" ")
   return (
     <header className="relative h-[52svh] min-h-[380px] md:h-[56vh] md:min-h-[440px] flex items-end md:items-center justify-center overflow-hidden bg-[#141414]">

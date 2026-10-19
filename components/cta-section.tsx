@@ -15,8 +15,8 @@ export function CTASection({ title, description, primaryButton, secondaryButton 
     <section className="relative py-20 md:py-28 px-4 sm:px-6 overflow-hidden">
       {/* Fundo */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#fe9445] via-[#e6b23a] to-[#fe9445]" />
-      {/* Imagem corrigida (o caminho anterior "/img/São Vicente.jpg" não existia) */}
-      <Image src="/SãoVicente.jpg" alt="" fill sizes="100vw" quality={50} className="object-cover opacity-10 mix-blend-multiply" />
+      {/* Nomes de ficheiro sem acentos/espaços: o Cloudflare não publica "SãoVicente.jpg" */}
+      <Image src="/sao-vicente.jpg" alt="" fill sizes="100vw" quality={50} className="object-cover opacity-10 mix-blend-multiply" />
       <div className="absolute inset-0 blueprint-grid-light opacity-50" aria-hidden="true" />
       <div className="absolute inset-x-0 top-0 h-2 hazard-stripes opacity-80" aria-hidden="true" />
 

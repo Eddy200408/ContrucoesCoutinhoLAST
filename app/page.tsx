@@ -20,7 +20,7 @@ import type { Slide, Service } from "@/types"
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const slides: Slide[] = [
   {
-    image: "/SãoVicente.jpg",
+    image: "/sao-vicente.jpg",
     small: "INICIO",
     title: "Construções",
     span: "Coutinho",
