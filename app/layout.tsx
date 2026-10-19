@@ -35,7 +35,8 @@ const GEO = { latitude: 16.8843699, longitude: -24.9773892 }
 export const metadata: Metadata = {
   metadataBase: new URL(company.baseUrl),
   title: {
-    default: "Construções Coutinho | Construção Civil em Mindelo, São Vicente — Cabo Verde",
+    // Curto para não ser cortado nos resultados do Google (~60 caracteres)
+    default: "Construções Coutinho | Construção Civil em Cabo Verde",
     template: "%s | Construções Coutinho",
   },
   description:
@@ -59,9 +60,15 @@ export const metadata: Metadata = {
     "fiscalização de obras",
   ],
   authors: [{ name: "Construções Coutinho" }],
+  // Ícones quadrados gerados por scripts/generate-icons.mjs — o Google mostra o favicon nos resultados
   icons: {
-    icon: "/icon/logoWhite.png",
-    apple: "/apple-icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   openGraph: {
     type: "website",
@@ -123,7 +130,7 @@ const jsonLd = {
   description: "Empresa de construção civil em Mindelo, São Vicente, Cabo Verde: elaboração de projetos, execução de obras e materiais de construção.",
   slogan: company.slogan,
   url: company.baseUrl,
-  logo: `${company.baseUrl}/icon/logoWhite.png`,
+  logo: `${company.baseUrl}/icon-512.png`,
   image: ogImageAbsolute,
   telephone: company.phone.replace(/\s/g, ""),
   email: company.email,
