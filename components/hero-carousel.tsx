@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import type { Slide } from "@/types"
+import { cldUrl } from "@/lib/cloudinary"
 
 interface HeroCarouselProps {
   slides: Slide[]
@@ -37,7 +38,7 @@ export function HeroCarousel({ slides, autoPlayInterval = 5000 }: HeroCarouselPr
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
           style={{
-            backgroundImage: `url(${slide.image})`,
+            backgroundImage: `url("${cldUrl(slide.image, { width: 1920 })}")`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -51,7 +52,7 @@ export function HeroCarousel({ slides, autoPlayInterval = 5000 }: HeroCarouselPr
             <h1 className="text-4xl md:text-6xl font-light my-3 leading-tight">
               {slide.title} <span className="text-[#fe9445]">{slide.span}</span>
             </h1>
-            <p className="max-w-[70%] text-lg text-white/90 my-6">{slide.description}</p>
+            <p className="max-w-full md:max-w-[70%] text-base md:text-lg text-white/90 my-6">{slide.description}</p>
             <div className="flex gap-4 flex-wrap justify-center">
               <Link
                 href={slide.cta1.href}
