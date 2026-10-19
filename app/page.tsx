@@ -191,7 +191,7 @@ export default function HomePage() {
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <span className="absolute top-4 right-4 font-display text-5xl font-extrabold text-white/30 leading-none">
+                  <span className="absolute top-4 right-4 font-display text-5xl font-extrabold text-white/30 leading-none" aria-hidden="true">
                     0{index + 1}
                   </span>
                 </div>
@@ -209,7 +209,7 @@ export default function HomePage() {
                   <p className="text-gray-600 mb-5">{service.desc}</p>
                   <Link
                     href="/services"
-                    className="text-[#fe9445] font-bold inline-flex items-center gap-1.5 group-hover:gap-3 transition-all"
+                    className="text-[#b8520b] font-bold inline-flex items-center gap-1.5 group-hover:gap-3 transition-all"
                   >
                     Saber Mais
                     <ArrowRight className="w-4 h-4" />

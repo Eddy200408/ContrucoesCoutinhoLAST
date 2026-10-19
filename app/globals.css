@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Não gerar CSS para a biblioteca shadcn/ui (components/ui) nem para pastas que
+   não fazem parte do site — reduz o CSS de ~166 KB para o essencial.
+   Se passar a usar um componente de components/ui, remova a linha correspondente. */
+@source not "../components/ui";
+@source not "../hooks";
+@source not "../styles";
+@source not "../scripts";
+@source not "../public";
+
 @custom-variant dark (&:is(.dark *));
 
 :root {

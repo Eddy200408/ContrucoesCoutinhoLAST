@@ -78,7 +78,7 @@ export function BentoGallery({ images, limit, showFilters = false, pageSize, mor
                 >
                   {cat.name}
                   <span
-                    className={`text-[11px] rounded-full px-1.5 py-0.5 ${active ? "bg-[#fe9445] text-white" : "bg-gray-100 text-gray-500"}`}
+                    className={`text-[11px] rounded-full px-1.5 py-0.5 ${active ? "bg-[#fe9445] text-[#232323]" : "bg-gray-100 text-gray-700"}`}
                   >
                     {cat.count}
                   </span>
@@ -153,7 +153,7 @@ export function BentoGallery({ images, limit, showFilters = false, pageSize, mor
             className="group inline-flex items-center gap-3 border-2 border-[#232323] text-[#232323] px-8 py-3.5 rounded-full font-bold hover:bg-[#232323] hover:text-white transition-all"
           >
             Carregar mais fotos
-            <span className="text-xs font-semibold rounded-full bg-[#fe9445] text-white px-2 py-0.5">{hiddenCount}</span>
+            <span className="text-xs font-semibold rounded-full bg-[#fe9445] text-[#232323] px-2 py-0.5">{hiddenCount}</span>
           </button>
         </div>
       )}

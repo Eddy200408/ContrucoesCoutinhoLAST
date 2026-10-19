@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { PageHeader } from "@/components/page-header"
 import { ContactForm } from "@/components/contact-form"
+import { MapEmbed } from "@/components/map-embed"
 import { SectionHeading } from "@/components/section-heading"
 import { WhatsAppIcon } from "@/components/icons"
 import { company } from "@/lib/data"
@@ -83,14 +84,14 @@ export default function ContactPage() {
                         <card.icon className="w-6 h-6 text-[#fe9445] group-hover:text-white transition-colors" />
                       </div>
                       <div className="min-w-0">
-                        <h4 className="font-bold text-[#232323] mb-1">{card.title}</h4>
+                        <h3 className="font-bold text-[#232323] mb-1">{card.title}</h3>
                         {card.lines.map((line) => (
                           <p key={line} className="text-gray-600 text-sm break-words">
                             {line}
                           </p>
                         ))}
                         {card.action && (
-                          <span className="inline-block mt-1.5 text-xs font-bold text-[#fe9445]">{card.action} →</span>
+                          <span className="inline-block mt-1.5 text-xs font-bold text-[#b8520b]">{card.action} →</span>
                         )}
                       </div>
                     </>
@@ -120,7 +121,7 @@ export default function ContactPage() {
 
               {/* Redes sociais */}
               <div data-reveal>
-                <h4 className="font-bold text-[#232323] mb-4">Siga-nos nas Redes Sociais</h4>
+                <h3 className="font-bold text-[#232323] mb-4">Siga-nos nas Redes Sociais</h3>
                 <div className="flex gap-3">
                   <Link
                     href={company.social.facebook}
@@ -173,21 +174,12 @@ export default function ContactPage() {
             }
           />
           <div className="relative rounded-3xl overflow-hidden shadow-xl h-[320px] md:h-[440px] bg-[#f0edec]" data-reveal>
-            <iframe
-              title="Mapa — Construções Coutinho, Mindelo"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3436.562696528632!2d-24.9773892!3d16.8843699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUzJzAzLjciTiAyNMKwNTgnMzguNiJX!5e0!3m2!1sen!2sus!4v1707660000000"
-            />
+            <MapEmbed title="Mapa — Construções Coutinho, Mindelo" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3436.562696528632!2d-24.9773892!3d16.8843699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUzJzAzLjciTiAyNMKwNTgnMzguNiJX!5e0!3m2!1sen!2sus!4v1707660000000" />
             <a
               href="https://www.google.com/maps/dir/?api=1&destination=16.8843699,-24.9773892"
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-[#232323] text-white px-5 py-3 rounded-full text-sm font-bold shadow-xl hover:bg-[#fe9445] transition-colors"
+              className="absolute z-10 bottom-4 left-4 inline-flex items-center gap-2 bg-[#232323] text-white px-5 py-3 rounded-full text-sm font-bold shadow-xl hover:bg-[#fe9445] transition-colors"
             >
               <Navigation className="w-4 h-4" /> Como chegar
             </a>

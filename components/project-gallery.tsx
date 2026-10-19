@@ -79,7 +79,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
               aria-pressed={filter === cat}
               className={`px-5 sm:px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap transition-all ${
                 filter === cat
-                  ? "bg-[#fe9445] text-white shadow-[0_8px_20px_rgba(254,148,69,0.35)]"
+                  ? "bg-[#fe9445] text-[#232323] shadow-[0_8px_20px_rgba(254,148,69,0.35)]"
                   : "bg-white text-[#333] hover:bg-[#fe9445]/10 border border-gray-200"
               }`}
             >
@@ -235,7 +235,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
             </div>
 
             <div className="p-6 md:p-8 pb-[max(env(safe-area-inset-bottom),24px)]">
-              <span className="text-[#fe9445] font-bold tracking-[0.15em] text-xs uppercase">{selectedProject.category}</span>
+              <span className="text-[#b8520b] font-bold tracking-[0.15em] text-xs uppercase">{selectedProject.category}</span>
               <h2 className="font-display text-2xl md:text-3xl font-extrabold text-[#232323] mt-2">{selectedProject.title}</h2>
               <p className="text-gray-600 mt-4 leading-relaxed">{selectedProject.description}</p>
               <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 text-gray-500">

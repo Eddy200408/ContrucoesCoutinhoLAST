@@ -60,7 +60,7 @@ export function FloatingActions() {
           <Link
             href="/contact#orcamento"
             className={`flex flex-col items-center justify-center gap-1 py-2.5 font-semibold ${
-              pathname === "/contact" ? "text-[#fe9445]" : "bg-[#fe9445] text-white"
+              pathname === "/contact" ? "text-[#fe9445]" : "bg-[#fe9445] text-[#232323]"
             }`}
           >
             <FileText className="w-5 h-5" />

@@ -13,30 +13,40 @@ import "./globals.css"
 // Fontes servidas localmente pelo Next (sem pedidos ao Google em tempo real, sem "saltos" de layout)
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
+  // Fonte variável: um só ficheiro cobre todos os pesos (300–900)
   variable: "--font-roboto",
   display: "swap",
 })
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
-  weight: ["400", "700", "800"],
   style: ["normal", "italic"],
   variable: "--font-roboto-condensed",
   display: "swap",
 })
 
 const ogImage = cldUrl("/service-slide3.jpg", { width: 1200 })
+// URL absoluto (os dados estruturados não aceitam caminhos relativos)
+const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${company.baseUrl}${ogImage}`
+
+// Coordenadas da sede (Mindelo, São Vicente) — as mesmas do mapa da página de contacto
+const GEO = { latitude: 16.8843699, longitude: -24.9773892 }
 
 export const metadata: Metadata = {
   metadataBase: new URL(company.baseUrl),
   title: {
-    default: "Construções Coutinho | Construção Civil em São Vicente, Cabo Verde",
+    default: "Construções Coutinho | Construção Civil em Mindelo, São Vicente — Cabo Verde",
     template: "%s | Construções Coutinho",
   },
   description:
-    "Construindo sonhos, Transformando Espaços - Projetos e execução com compromisso, qualidade e segurança em Cabo Verde.",
+    "Construções Coutinho — empresa de construção civil em Mindelo, São Vicente, Cabo Verde. Construindo sonhos, Transformando Espaços: projetos, execução de obras e materiais com compromisso, qualidade e segurança.",
+  applicationName: "Construções Coutinho",
   keywords: [
+    "Construções Coutinho",
+    "Construcoes Coutinho",
+    "Coutinho construções",
+    "construtora Cabo Verde",
+    "empresa de construção Mindelo",
     "construção civil",
     "projetos",
     "arquitetura",
@@ -68,6 +78,18 @@ export const metadata: Metadata = {
     images: [ogImage],
   },
   alternates: { canonical: "/" },
+  robots: { index: true, follow: true, "max-image-preview": "large" },
+  // Verificação do Google Search Console (definir NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION no Cloudflare)
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
+  // Sinais de localização (região de Cabo Verde)
+  other: {
+    "geo.region": "CV-SV",
+    "geo.placename": "Mindelo, São Vicente, Cabo Verde",
+    "geo.position": `${GEO.latitude};${GEO.longitude}`,
+    ICBM: `${GEO.latitude}, ${GEO.longitude}`,
+  },
 }
 
 export const viewport: Viewport = {
@@ -78,14 +100,31 @@ export const viewport: Viewport = {
 }
 
 // Dados estruturados — ajuda o Google a mostrar a empresa nas pesquisas locais
+const alternateNames = ["Construcoes Coutinho", "Coutinho Construções", "Construções Coutinho Cabo Verde"]
+
 const jsonLd = {
   "@context": "https://schema.org",
+  "@graph": [
+    {
+      // Ajuda o Google a mostrar "Construções Coutinho" como nome do site nos resultados
+      "@type": "WebSite",
+      "@id": `${company.baseUrl}/#website`,
+      name: company.name,
+      alternateName: alternateNames,
+      url: company.baseUrl,
+      inLanguage: "pt-CV",
+      publisher: { "@id": `${company.baseUrl}/#empresa` },
+    },
+    {
   "@type": "GeneralContractor",
+  "@id": `${company.baseUrl}/#empresa`,
   name: company.name,
+  alternateName: alternateNames,
+  description: "Empresa de construção civil em Mindelo, São Vicente, Cabo Verde: elaboração de projetos, execução de obras e materiais de construção.",
   slogan: company.slogan,
   url: company.baseUrl,
   logo: `${company.baseUrl}/icon/logoWhite.png`,
-  image: ogImage,
+  image: ogImageAbsolute,
   telephone: company.phone.replace(/\s/g, ""),
   email: company.email,
   foundingDate: String(company.founded),
@@ -96,9 +135,13 @@ const jsonLd = {
     addressRegion: "São Vicente",
     addressCountry: "CV",
   },
-  areaServed: "Cabo Verde",
+  geo: { "@type": "GeoCoordinates", ...GEO },
+  hasMap: `https://www.google.com/maps/search/?api=1&query=${GEO.latitude},${GEO.longitude}`,
+  areaServed: { "@type": "Country", name: "Cabo Verde" },
   openingHours: ["Mo-Fr 08:00-18:00", "Sa 08:00-13:00"],
   sameAs: [company.social.facebook, company.social.instagram],
+    },
+  ],
 }
 
 // Evita que o loader "pisque" em recarregamentos dentro da mesma sessão
@@ -110,7 +153,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt" className={`${roboto.variable} ${robotoCondensed.variable}`} suppressHydrationWarning>
+    <html lang="pt-CV" className={`${roboto.variable} ${robotoCondensed.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: introScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

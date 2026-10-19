@@ -63,7 +63,7 @@ export function Footer() {
 
           {/* Links rápidos */}
           <div>
-            <h5 className="font-display text-white font-bold mb-5 text-lg">Links Rápidos</h5>
+            <h3 className="font-display text-white font-bold mb-5 text-lg">Links Rápidos</h3>
             <ul className="space-y-1">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -77,7 +77,7 @@ export function Footer() {
 
           {/* Serviços */}
           <div>
-            <h5 className="font-display text-white font-bold mb-5 text-lg">Serviços</h5>
+            <h3 className="font-display text-white font-bold mb-5 text-lg">Serviços</h3>
             <ul className="space-y-1">
               {serviceLinks.map((label) => (
                 <li key={label}>
@@ -91,7 +91,7 @@ export function Footer() {
 
           {/* Contactos */}
           <div className="col-span-2 lg:col-span-1">
-            <h5 className="font-display text-white font-bold mb-5 text-lg">Contactos</h5>
+            <h3 className="font-display text-white font-bold mb-5 text-lg">Contactos</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#fe9445] mt-0.5 flex-shrink-0" />

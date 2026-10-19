@@ -187,7 +187,7 @@ export default function ServicesPage() {
           {serviceCategories.map((category, catIndex) => (
             <div key={catIndex} id={slug(category.title)} className="mb-16 md:mb-24 last:mb-0 scroll-mt-36">
               <div className="flex items-center gap-4 mb-8 md:mb-10" data-reveal="left">
-                <span className="font-display text-5xl md:text-6xl font-extrabold text-[#fe9445]/20 leading-none">
+                <span className="font-display text-5xl md:text-6xl font-extrabold text-[#fe9445]/20 leading-none" aria-hidden="true">
                   0{catIndex + 1}
                 </span>
                 <div>
@@ -230,7 +230,7 @@ export default function ServicesPage() {
                       <p className="text-gray-600 mb-5 leading-relaxed">{service.desc}</p>
                       <Link
                         href="/contact#orcamento"
-                        className="inline-flex items-center gap-2 text-[#fe9445] font-bold hover:gap-3 transition-all"
+                        className="inline-flex items-center gap-2 text-[#b8520b] font-bold hover:gap-3 transition-all"
                       >
                         Solicitar Orçamento
                         <ArrowRight className="w-4 h-4" />

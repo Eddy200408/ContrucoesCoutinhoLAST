@@ -113,7 +113,7 @@ export function BeforeAfterSlider({ item }: BeforeAfterSliderProps) {
       </div>
 
       <div className="p-5 md:p-6">
-        <span className="text-[#fe9445] text-xs font-bold tracking-[0.15em] uppercase">{item.category}</span>
+        <span className="text-[#b8520b] text-xs font-bold tracking-[0.15em] uppercase">{item.category}</span>
         <h3 className="font-display text-xl md:text-2xl font-bold text-[#232323] mt-1">{item.title}</h3>
         <p className="text-gray-600 mt-2 text-sm md:text-base">{item.description}</p>
       </div>

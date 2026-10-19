@@ -23,7 +23,7 @@ export function SectionHeading({
     <div data-reveal className={`${centered ? "text-center mx-auto" : ""} max-w-2xl mb-10 md:mb-14 ${className}`}>
       {eyebrow && (
         <span
-          className={`inline-flex items-center gap-2 text-[#fe9445] font-bold tracking-[0.2em] text-xs uppercase ${
+          className={`inline-flex items-center gap-2 ${dark ? "text-[#fe9445]" : "text-[#b8520b]"} font-bold tracking-[0.2em] text-xs uppercase ${
             centered ? "justify-center" : ""
           }`}
         >
