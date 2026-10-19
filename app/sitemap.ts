@@ -3,7 +3,8 @@ import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://construcoescoutinho.cv/';
+  // Remove a barra final para não gerar URLs com "//" (ex.: https://site.cv//about)
+  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://construcoescoutinho.cv').replace(/\/+$/, '');
 
   return [
     {

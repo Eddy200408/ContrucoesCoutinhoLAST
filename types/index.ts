@@ -80,3 +80,19 @@ export interface BeforeAfter {
   after: string
   category: string
 }
+
+export interface GalleryImage {
+  src: string
+  alt: string
+  category?: string
+}
+
+export interface ProcessStep {
+  title: string
+  description: string
+}
+
+export interface FaqItem {
+  question: string
+  answer: string
+}
