@@ -85,13 +85,17 @@ function buildIco(pngs) {
   return Buffer.concat([header, ...pngs.map((p) => p.data)])
 }
 
+// Todos os tamanhos são reduções do ícone de 512 px, para manter as linhas finas do logótipo original
+const master = await makeIcon(512)
+const shrink = (size) => sharp(master).resize(size, size).png({ compressionLevel: 9 }).toBuffer()
+
 const icoSizes = [16, 32, 48]
-const icoPngs = await Promise.all(icoSizes.map(async (size) => ({ size, data: await makeIcon(size, { padding: 0.08 }) })))
+const icoPngs = await Promise.all(icoSizes.map(async (size) => ({ size, data: await shrink(size) })))
 await writeFile("public/favicon.ico", buildIco(icoPngs))
 await writeFile("public/favicon-48x48.png", icoPngs[2].data)
-await writeFile("public/icon-192.png", await makeIcon(192))
-await writeFile("public/icon-512.png", await makeIcon(512))
-await writeFile("public/apple-touch-icon.png", await makeIcon(180))
+await writeFile("public/icon-192.png", await shrink(192))
+await writeFile("public/icon-512.png", master)
+await writeFile("public/apple-touch-icon.png", await shrink(180))
 await writeFile("public/icon-maskable-512.png", await makeIcon(512, { padding: 0.22 }))
 
 console.log("Ícones gerados: favicon.ico, favicon-48x48.png, icon-192.png, icon-512.png, apple-touch-icon.png, icon-maskable-512.png")
